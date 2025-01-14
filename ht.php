@@ -24,6 +24,13 @@
 <button onlick="labot()">Labot</button>
 </div>
 
+<div id="editForm">
+<h3>Veikt labošanu:</h3>
+<form method="post" action=""></form>
 
+
+
+</div>
+<button onclick="window.location.href='Login.php';">Iziet</button> <!-- Poga Iziet(burtiski) -->
 </body>
 </html>
