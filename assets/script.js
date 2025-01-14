@@ -18,5 +18,5 @@ function paraditDatus(value){
         satursD.style.display = "none";
         labotF.style.display = "none";
     }
-    return;
+    return; //nepabeigts
 }
