@@ -9,6 +9,13 @@
 </head>
 <body>
     <form method="post">
+    <label for="inventars">Izvēlaties vienu:</label>
+    <select name="inventars" id="inventars">
+        <option value="dators">Datori</option>
+        <option value="monitors">Monitori</option>
+        <option value="projektors">Projektori</option>
+        <option value="unc">Un citi</option>
+    </select>
 
 </form>
 </body>
