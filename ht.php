@@ -16,7 +16,14 @@
         <option value="projektors">Projektori</option>
         <option value="unc">Un citi</option>
     </select>
-
 </form>
+
+<div id="saturs">
+<h3>Detaļas:</h3>
+<p id ="inventāraDetaļas"></p> <!-- izveide caur js -->
+<button onlick="labot()">Labot</button>
+</div>
+
+
 </body>
 </html>
