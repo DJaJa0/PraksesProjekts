@@ -8,8 +8,8 @@
     <script src="assets/script.js" defer></script>
 </head>
 <body>
-    <h1>Laipni lūdzam!</h1>
-    <br>
-    <p>Jūs esat veiksmīgi ienācis sistēmā!!</p>
+    <form method="post">
+
+</form>
 </body>
 </html>
