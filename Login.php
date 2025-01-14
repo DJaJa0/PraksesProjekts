@@ -10,7 +10,7 @@
 </head>
 <body>
 <main>
-    <form method="post" action="ht.php">
+    <form method="post" action="Inventars.php">
         <h3>Pieteikšanās Datubāzē:</h3>
         <br>
         <label for="lietotajs">Lietotājs:</label><br>
