@@ -24,7 +24,7 @@
 <button onlick="labot()">Labot</button>
 </div>
 
-<div id="editForm">
+<div id="labotFormu">
 <h3>Veikt labošanu:</h3>
 <form method="post" action="Labot.php" onsubmit=""></form>
 <label for="nosaukums">Nosaukums:</label>
