@@ -11,7 +11,7 @@
 <body>
 <main>
     <form method="post" action="Inventars.php">
-        <h3>Pieteikšanās Datubāzē:</h3>
+        <h3>Pieteikšanāss Datubāzē:</h3>
         <br>
         <label for="lietotajs">Lietotājs:</label><br>
         <input type="text" id="lietotajs" name="lietotajs">
