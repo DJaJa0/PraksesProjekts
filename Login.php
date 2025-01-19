@@ -6,23 +6,23 @@
     <title>Login</title>
     <link rel="stylesheet" href="assets/style.css">
     <script src="assets/script.js" defer></script>
-
 </head>
 <body>
-<main>
-    <form method="post" action="Inventars.php">
-        <h3>Pieteikšanāss Datubāzē:</h3>
-        <br>
-        <label for="lietotajs">Lietotājs:</label><br>
-        <input type="text" id="lietotajs" name="lietotajs">
-        <br><br>
-        
-        <label for="parole">Parole:</label><br>
-        <input type="password" id="parole" name="parole" maxlength="255" required>
-        <br><br>
-        
-        <button type="submit" name="ienakt">Ienākt</button>
-    </form>
+<main class="login-container">
+    <div class="login-box">
+        <h1>Pieteikšanāss Datubāzē</h1>
+        <form method="post" action="Inventars.php">
+            <label for="lietotajs">Lietotājs:</label>
+            <input type="text" id="lietotajs" name="lietotajs" class="input-field" required>
+            
+            <label for="parole">Parole:</label>
+            <input type="password" id="parole" name="parole" class="input-field" maxlength="255" required>
+            
+            <button type="submit" name="ienakt" class="login-button">Ienākt</button>
+        </form>
+        <p class="signup-text">or, <a href="#">sign up</a></p>
+    </div>
 </main>
 </body>
 </html>
+
