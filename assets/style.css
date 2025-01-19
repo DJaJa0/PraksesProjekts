@@ -56,6 +56,8 @@ p {
     margin: 5px 0;
 }
 
+/*login ekrāns*/
+
 .login-container{
     display: flex;
     justify-content: center;
@@ -81,5 +83,25 @@ h1{
 .input-field{
     width: 100%;
     padding: 10px;
-    
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+
+}
+
+.login-button{
+    width: 100%;
+    padding: 10px;
+    margin: 20px 0;
+    border: none;
+    border-radius: 5px;
+    background-color: #00bcd4;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.login-button:hover{
+    background-color: #007784;
 }
