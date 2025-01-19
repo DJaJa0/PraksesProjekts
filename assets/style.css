@@ -71,3 +71,15 @@ p {
     text-align: center;
     width: 300px;
 }
+
+h1{
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #000
+}
+
+.input-field{
+    width: 100%;
+    padding: 10px;
+    
+}
