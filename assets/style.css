@@ -3,6 +3,10 @@ body {
     background-color: #f4f4f4;
     margin: 0;
     padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #0f2a36;
 }
 
 form, #saturs, #labotFormu {
@@ -50,4 +54,20 @@ p {
     padding: 10px;
     border-radius: 5px;
     margin: 5px 0;
+}
+
+.login-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.login-box{
+    background-color: white;
+    padding: 20px 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 300px;
 }
