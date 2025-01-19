@@ -20,7 +20,6 @@
             
             <button type="submit" name="ienakt" class="login-button">Ienākt</button>
         </form>
-        <p class="signup-text">or, <a href="#">sign up</a></p>
     </div>
 </main>
 </body>
