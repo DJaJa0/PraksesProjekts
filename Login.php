@@ -10,7 +10,7 @@
 <body>
 <main class="login-container">
     <div class="login-box">
-        <h1>Pieteikšanāss Datubāzē</h1>
+        <h1>Pieteikšanās Datubāzē</h1>
         <form method="post" action="Inventars.php">
             <label for="lietotajs">Lietotājs:</label>
             <input type="text" id="lietotajs" name="lietotajs" class="input-field" required>
