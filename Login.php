@@ -12,11 +12,11 @@
     <div class="login-box">
         <h1>Pieteikšanās Datubāzē</h1>
         <form method="post" action="Inventars.php">
-            <label for="lietotajs">Lietotājs:</label>
-            <input type="text" id="lietotajs" name="lietotajs" class="input-field" required>
             
-            <label for="parole">Parole:</label>
-            <input type="password" id="parole" name="parole" class="input-field" maxlength="255" required>
+            <input type="text" id="lietotajs" name="lietotajs" class="input-field" placeholder="Ievadi lietotājvārdu..." required >
+            
+            
+            <input type="password" id="parole" name="parole" class="input-field" maxlength="255" placeholder="Ievadi paroli..." required>
             
             <button type="submit" name="ienakt" class="login-button">Ienākt</button>
         </form>
