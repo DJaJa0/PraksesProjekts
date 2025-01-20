@@ -15,6 +15,7 @@
             <option value="dators">Datori</option>
             <option value="monitors">Monitori</option>
         </select>
+        <button onclick="window.location.href='Login.php';">Iziet</button>
     </form>
 
     <div id="saturs" style="display: none;">
@@ -42,6 +43,6 @@
         </form>
     </div>
 
-    <button onclick="window.location.href='Login.php';">Iziet</button>
+    
 </body>
 </html>
