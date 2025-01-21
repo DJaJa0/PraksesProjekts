@@ -29,14 +29,14 @@ form button {
     width: 100%;
     padding: 10px;
     border-radius: 5px;
-    background-color: #007bff;
+    background-color: #00bcd4;
     color: white;
     border: none;
     cursor: pointer;
 }
 
 form button:hover {
-    background-color: #0056b3;
+    background-color: #007784;
 }
 
 h3 {
@@ -54,7 +54,7 @@ input, select {
 }
 
 button {
-    background-color: #007bff;
+    background-color: #00bcd4;
     color: white;
     border: none;
     padding: 10px 15px;
@@ -64,8 +64,22 @@ button {
     width: 100%;
 }
 
+.btn{
+    max-width: 150px;
+    align-self: flex-start;
+    margin-bottom: 15px;
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #00bcd4;
+    color: white;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+}
+
 button:hover {
-    background-color: #0056b3;
+    background-color: #007784;
 }
 
 #labotFormu {

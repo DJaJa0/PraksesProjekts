@@ -1,3 +1,7 @@
+// Palīdz izvairīties no formu atkārtotas iesniegšanas (resubmission):
+if ( window.history.replaceState ) {
+    window.history.replaceState( null, null, window.location.href );
+}
 let dati = [
     { nosaukums: "Galda lampa", apraksts: "12345", kabinets: "201" },
     { nosaukums: "Krēsls", apraksts: "67890", kabinets: "202" }
