@@ -10,7 +10,7 @@
 <body>
 <main class="login-container">
     <div class="login-box">
-        <h1>Pieteikšanās Datubāzē</h1>
+        <h1>Pieteikšanās 5.vsk Datubāzē</h1>
         <form method="post" action="Inventars.php">
             
             <input type="text" id="lietotajs" name="lietotajs" class="input-field" placeholder="Ievadi lietotājvārdu..." required >
