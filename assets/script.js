@@ -1,77 +1,69 @@
-// Palīdz izvairīties no formu atkārtotas iesniegšanas (resubmission)
-if (window.history.replaceState) {
-    window.history.replaceState(null, null, window.location.href);
-}
+let dati = [
+    { nosaukums: "Galda lampa", apraksts: "12345", kabinets: "201" },
+    { nosaukums: "Krēsls", apraksts: "67890", kabinets: "202" }
+];
 
-// Masīvs ar datiem (lokāli)
-const dati = {
-    dators: [
-        { nosaukums: "Dell",apraksts:"213232", kabinets: "201" },
-        { nosaukums: "Acer",apraksts:"5664677757", kabinets: "202" },
-        { nosaukums: "MSI",apraksts:"23424", kabinets: "23" }
-    ],
-    monitors: [
-        { nosaukums: "Samsung Lite",apraksts:"213", kabinets: "121" },
-        { nosaukums: "HP",apraksts:"967564", kabinets: "201" },
-        { nosaukums: "Samsung Lite",apraksts:"786442", kabinets: "202" },
-        { nosaukums: "HP",apraksts:"966532", kabinets: "23" }
+let pašreizējaisIndekss = null;
 
-    ],
-    projektors: [
-        { nosaukums: "Dell smart",apraksts:"26564", kabinets: "121" },
-        { nosaukums: "Dell smart",apraksts:"26566", kabinets: "202" },
-    ]
-};
-
-// Parāda izvēlēto datu kategoriju
-function paraditDatus(value) {
-    const satursD = document.getElementById("saturs");
-    const inventaraDetaļas = document.getElementById("inventāraDetaļas");
-    const labotF = document.getElementById("labotFormu");
-
-    if (value === "none") {
-        satursD.style.display = "none";
-        labotF.style.display = "none";
-        return;
-    }
-
-    // Ģenere sarakstu ar datiem
-    const kategorijasDati = dati[value] || [];
-    let html = "";
-    kategorijasDati.forEach((item, index) => {
-        html += `Nosaukums:${item.nosaukums} || Inventrāra Nr:${item.apraksts} || Kabinets:(${item.kabinets})<br>`;
-    });
-
-    inventaraDetaļas.innerHTML = html || "Nav informācijas";
-    satursD.style.display = "block";
-}
-document.getElementById("inventars").addEventListener("change", (event) => {
-    paraditDatus(event.target.value);
+document.addEventListener("DOMContentLoaded", function () {
+    paraditDatus();
 });
 
-// Saglabā izmaiņas lokāli
+function pievienotJaunu() {
+    document.getElementById("nosaukums").value = "";
+    document.getElementById("apraksts").value = "";
+    document.getElementById("kabinets").value = "";
+    pašreizējaisIndekss = null;
+    document.getElementById("labotFormu").style.display = "block";
+}
+
+function labot(index) {
+    pašreizējaisIndekss = index;
+    const ieraksts = dati[index];
+    document.getElementById("nosaukums").value = ieraksts.nosaukums;
+    document.getElementById("apraksts").value = ieraksts.apraksts;
+    document.getElementById("kabinets").value = ieraksts.kabinets;
+    document.getElementById("labotFormu").style.display = "block";
+}
+
 function saglabatDatus() {
     const nosaukums = document.getElementById("nosaukums").value;
     const apraksts = document.getElementById("apraksts").value;
     const kabinets = document.getElementById("kabinets").value;
-    const kategorija = document.getElementById("inventars").value;
 
-    // Pievieno jauno informāciju masīvam(tie nesaglabājas ja lietotājs iejiet pa jaunu)
-    dati[kategorija].push({ nosaukums: nosaukums, kabinets: kabinets });
+    if (pašreizējaisIndekss !== null) {
+        dati[pašreizējaisIndekss] = { nosaukums, apraksts, kabinets };
+        alert("Dati veiksmīgi atjaunināti!");
+    } else {
+        dati.push({ nosaukums, apraksts, kabinets });
+        alert("Jauns ieraksts veiksmīgi pievienots!");
+    }
 
-    // Vnk paziņojums kad viss ir veiksmīgi
-    alert("Dati veiksmīgi saglabāti!");
-
-    // Notīra ievades laukus kad labo lai nerādās iepriekšējie dati/informācija
     document.getElementById("nosaukums").value = "";
     document.getElementById("apraksts").value = "";
     document.getElementById("kabinets").value = "";
     document.getElementById("labotFormu").style.display = "none";
-
-    paraditDatus(kategorija);
+    paraditDatus();
 }
 
-// Parāda labošanas formu(izsauc arā formu kur var labot datus)
-function labot() {
-    document.getElementById("labotFormu").style.display = "block";
+function paraditDatus() {
+    const inventaraDetaļas = document.getElementById("inventāraDetaļas");
+    if (dati.length === 0) {
+        inventaraDetaļas.innerHTML = "Nav pievienotu datu.";
+        return;
+    }
+
+    let html = "<table><thead><tr><th>Nosaukums</th><th>Inventāra Nr.</th><th>Kabineta Nr.</th><th>Darbība</th></tr></thead><tbody>";
+    dati.forEach((ieraksts, index) => {
+        html += `<tr>
+                    <td>${ieraksts.nosaukums}</td>
+                    <td>${ieraksts.apraksts}</td>
+                    <td>${ieraksts.kabinets}</td>
+                    <td>
+                        <button onclick="labot(${index})">Labot</button>
+                    </td>
+                </tr>`;
+    });
+    html += "</tbody></table>";
+    inventaraDetaļas.innerHTML = html;
 }
