@@ -54,6 +54,22 @@ h1{
     
 }
 
+.input-container{
+    display: flex;
+    align-items: center;
+    margin: 15px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #f9f9f9;
+}
+
+.input-container .icon{
+    margin-right: 10px;
+    font-size: 18px;
+    color: #888;
+}
+
 .input-field{
     width: 100%;
     padding: 10px;
