@@ -1,0 +1,1 @@
+//saglabās datus no datu bāzā, kad tie tiks rediģēti
