@@ -15,7 +15,7 @@
             <option value="dators">Datori</option>
             <option value="monitors">Monitori</option>
         </select>
-        <a href="Login.php" class="btn">Iziet</a>
+        <a href="phplogin/Login.php" class="btn">Iziet</a>
     </form>
 
     <div id="saturs">
