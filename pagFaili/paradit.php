@@ -1,0 +1,1 @@
+//parādis datus no datubāzes
