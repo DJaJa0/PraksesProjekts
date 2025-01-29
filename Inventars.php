@@ -15,9 +15,28 @@ if (!isset($_SESSION['loggedin'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DatuBāze</title>
     <link rel="stylesheet" href="assets/style2.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer">
     <script src="assets/script.js" defer></script>
 </head>
-<body>
+
+<body> 
+    <div class="loggedin">
+		<nav class="navtop">
+			<div>
+				<h1>
+                    <img src="assets/photos/icon.png" alt="Skolas logo" class="logo">
+                    Liepājas Draudzīgā aicinājuma vidusskola
+                </h1>
+				<a href="profile.php"><i class="fas fa-user-circle"></i>Profils</a>
+				<a href="logout.php"><i class="fas fa-sign-out-alt"></i>Iziet</a>
+			</div>
+		</nav>
+		<div class="content">
+			<h2>Skolas inventāra datubāze</h2>
+			<p>Sveicināts atpakaļ, <?=htmlspecialchars($_SESSION['name'], ENT_QUOTES)?>!</p>
+		</div>
+    </div>
+        
     <form>
         <label for="inventars">Izvēlaties vienu:</label>
         <select name="inventars" id="inventars">
@@ -52,6 +71,8 @@ if (!isset($_SESSION['loggedin'])) {
         <button type="submit">Saglabāt</button>
     </form>
 </div>
+
+
 
 
     
