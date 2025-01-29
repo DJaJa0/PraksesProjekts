@@ -35,7 +35,7 @@ if ($stmt = $con->prepare('SELECT id, password FROM accounts WHERE username = ?'
             $_SESSION['name'] = $_POST['username'];
             $_SESSION['id'] = $id;
 
-            echo 'Sveicināts atpakaļ, ' . htmlspecialchars($_SESSION['name'], ENT_QUOTES) . '!';
+            header('Location: ../Inventars.php');
 
         }else{
             echo 'Nepareizs lietotājvārds un/vai parole!';
