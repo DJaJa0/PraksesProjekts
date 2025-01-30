@@ -204,3 +204,13 @@ table tr:hover{
     margin-right: 10px; 
     vertical-align: middle;
 }
+
+.background-img{
+    width: 100vw; /* Pilns ekrāna platums */
+    height: 100vh; /* Pilns ekrāna augstums */
+    object-fit: cover; /* Nodrošina, ka bilde aizpilda visu laukumu */
+    position: fixed; /* Fiksē fonu, lai tas nepārvietotos */
+    top: 0;
+    left: 0;
+    z-index: -1; /* Novieto fonā aiz visa satura */
+}
