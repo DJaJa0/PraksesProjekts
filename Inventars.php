@@ -73,7 +73,7 @@ if (!isset($_SESSION['loggedin'])) {
 </div>
 
 
-
+<img src="assets/photos/skolasbilde22.jpg" alt="Fona attēls" class="background-img">
 
     
 </body>
