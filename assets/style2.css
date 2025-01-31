@@ -206,11 +206,11 @@ table tr:hover{
 }
 
 .background-img{
-    width: 100vw; /* Pilns ekrāna platums */
-    height: 100vh; /* Pilns ekrāna augstums */
-    object-fit: cover; /* Nodrošina, ka bilde aizpilda visu laukumu */
-    position: fixed; /* Fiksē fonu, lai tas nepārvietotos */
+    width: 100vw; 
+    height: 100vh; 
+    object-fit: cover; 
+    position: fixed; 
     top: 0;
     left: 0;
-    z-index: -1; /* Novieto fonā aiz visa satura */
+    z-index: -1; 
 }
