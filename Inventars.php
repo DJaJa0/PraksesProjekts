@@ -75,6 +75,23 @@ if (!isset($_SESSION['loggedin'])) {
 
 <img src="assets/photos/skolasbilde22.jpg" alt="Fona attēls" class="background-img">
 
-    
+<div class="footerContainer">
+    <div class="socialIcons">
+        <a href=""><i class="fa-brands fa-facebook"></i></a>
+        <a href=""><i class="fa-brands fa-instagram"></i></a>
+        <a href=""><i class="fa-brands fa-youtube"></i></a>
+    </div>
+    <div class="footerNav">
+        <ul>
+            <li><a href="">Home</a></li>
+            <li><a href="">About</a></li>
+            <li><a href="">Contact us</a></li>
+        </ul>
+    </div>
+    <div class="footerBottom">
+        <p>Copyright &copy;2025; Liepājas Draudzīgā aicinājuma vidusskola</p>
+    </div>
+</div>
+
 </body>
 </html>
