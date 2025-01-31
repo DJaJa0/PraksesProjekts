@@ -1,10 +1,10 @@
-body {
+body{
     background-color: #1e3d58;
     margin: 0;
     font-family: Arial, sans-serif;
 }
 
-form, #saturs, #labotFormu {
+form, #saturs, #labotFormu{
     margin: 20px auto;
     padding: 20px;
     background-color: #fff;
@@ -16,13 +16,13 @@ form, #saturs, #labotFormu {
     box-sizing: border-box;
 }
 
-form label, form input, form select {
+form label, form input, form select{
     margin-bottom: 15px;
     width: 100%;
     color: #000;
 }
 
-form button {
+form button{
     max-width: 150px;
     align-self: flex-start;
     margin-bottom: 15px;
@@ -35,17 +35,17 @@ form button {
     cursor: pointer;
 }
 
-form button:hover {
+form button:hover{
     background-color: #007784;
 }
 
-h3 {
+h3{
     margin-bottom: 20px;
     color: #000;
     text-align: center;
 }
 
-input, select {
+input, select{
     padding: 10px;
     font-size: 16px;
     border: 1px solid #ccc;
@@ -53,7 +53,7 @@ input, select {
     box-sizing: border-box;
 }
 
-button {
+button{
     background-color: #00bcd4;
     color: white;
     border: none;
@@ -78,36 +78,36 @@ button {
     text-align: center;
 }
 
-button:hover {
+button:hover{
     background-color: #007784;
 }
 
-#labotFormu {
+#labotFormu{
     display: none;
 }
 
-table {
+table{
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
 }
 
-table th, table td {
+table th, table td{
     border: 1px solid #ccc;
     padding: 10px;
     text-align: left;
 }
 
-table th {
+table th{
     background-color: #f2f2f2;
     font-weight: bold;
 }
 
-table tr:nth-child(even) {
+table tr:nth-child(even){
     background-color: #f9f9f9;
 }
 
-table tr:hover {
+table tr:hover{
     background-color: #f1f1f1;
 }
 
@@ -203,4 +203,14 @@ table tr:hover {
     width: auto;    
     margin-right: 10px; 
     vertical-align: middle;
+}
+
+.background-img{
+    width: 100vw; /* Pilns ekrāna platums */
+    height: 100vh; /* Pilns ekrāna augstums */
+    object-fit: cover; /* Nodrošina, ka bilde aizpilda visu laukumu */
+    position: fixed; /* Fiksē fonu, lai tas nepārvietotos */
+    top: 0;
+    left: 0;
+    z-index: -1; /* Novieto fonā aiz visa satura */
 }
