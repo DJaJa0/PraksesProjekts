@@ -12,7 +12,7 @@
 		<div class="login">
             <h1>5.vsk datubāze</h1>
 			<h2>Login</h2>           
-			<form action="authenticate.php" method="post">
+			<form action="../Inventars.php" method="post">
 				<label for="username">
 					<i class="fas fa-user"></i>
 				</label>
