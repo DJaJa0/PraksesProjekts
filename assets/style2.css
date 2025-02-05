@@ -1,7 +1,13 @@
-body{
-    background-color: #1e3d58;
+body, html{
     margin: 0;
     font-family: Arial, sans-serif;
+    height: 100%; 
+    display: flex;
+    flex-direction: column;
+}
+
+.content2{
+    flex: 1;
 }
 
 form, #saturs, #labotFormu{
@@ -223,17 +229,23 @@ table tr:hover{
     margin: 0;
     box-sizing: border-box;
 }
+
 footer{
     background-color: #111;
+    width: 100%;
+    text-align: center;
 }
+
 .footerContainer{
     width: 100%;
-    padding: 70px 30px 20px ;
+    padding: 20px 30px 20px ;
 }
+
 .socialIcons{
     display: flex;
     justify-content: center;
 }
+
 .socialIcons a{
     text-decoration: none;
     padding:  10px;
@@ -241,28 +253,34 @@ footer{
     margin: 10px;
     border-radius: 50%;
 }
+
 .socialIcons a i{
     font-size: 2em;
     color: black;
     opacity: 0,9;
 }
-/* Hover affect on social media icon */
+
+
 .socialIcons a:hover{
     background-color: #111;
     transition: 0.5s;
 }
+
 .socialIcons a:hover i{
     color: white;
     transition: 0.5s;
 }
+
 .footerNav{
     margin: 30px 0;
 }
+
 .footerNav ul{
     display: flex;
     justify-content: center;
     list-style-type: none;
 }
+
 .footerNav ul li a{
     color:white;
     margin: 20px;
@@ -275,14 +293,17 @@ footer{
 .footerNav ul li a:hover{
     opacity: 1;
 }
+
 .footerBottom{
     background-color: #000;
     padding: 20px;
     text-align: center;
 }
+
 .footerBottom p{
     color: white;
 }
+
 .designer{
     opacity: 0.7;
     text-transform: uppercase;
@@ -290,15 +311,18 @@ footer{
     font-weight: 400;
     margin: 0px 5px;
 }
+
 @media (max-width: 700px){
     .footerNav ul{
         flex-direction: column;
     } 
+
     .footerNav ul li{
         width:100%;
         text-align: center;
         margin: 10px;
     }
+    
     .socialIcons a{
         padding: 8px;
         margin: 4px;
