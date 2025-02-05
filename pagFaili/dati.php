@@ -1,4 +1,3 @@
-@ -0,0 +1,46 @@
 <?php
 header('Content-Type: application/json');
 
@@ -15,27 +14,37 @@ if ($conn->connect_error) {
 
 
 if (isset($_GET['tips'])) {
-    $tips = $_GET['tips'];
+    $tips = strtolower($_GET['tips']); 
+    $page = isset($_GET['page']) ? (int)$_GET['page'] : 1; 
+    $limit = 5;
+    $offset = ($page - 1) * $limit; 
 
+   
     $lauki = [
-        "dators" => ["Datora_nosaukums", "Datora_nr"],
-        "monitors" => ["Monitora_nosaukums", "Monitora_nr"],
-        "projektors" => ["Projektora_nosaukums", "Projektora_nr"]
+        "datori" => ["Datora_nosaukums", "Datora_nr"],
+        "monitori" => ["Monitora_nosaukums", "Monitora_nr"],
+        "projektori" => ["Projektora_nosaukums", "Projektora_nr"]
     ];
 
     if (isset($lauki[$tips])) {
         $nosaukums = $lauki[$tips][0];
         $numurs = $lauki[$tips][1];
 
-        $sql = "SELECT Kab AS kabinets, $nosaukums AS nosaukums, $numurs AS numurs FROM inventarizacija_2024";
+        $sql = "SELECT Kab AS kabinets, $nosaukums AS nosaukums, $numurs AS numurs 
+                FROM inventarizacija_2024 
+                LIMIT $limit OFFSET $offset";
         $result = $conn->query($sql);
 
-        $dati = [];
-        while ($row = $result->fetch_assoc()) {
-            $dati[] = $row;
-        }
+        if ($result === false) {
+            echo json_encode(["error" => "SQL kļūda: " . $conn->error]);
+        } else {
+            $dati = [];
+            while ($row = $result->fetch_assoc()) {
+                $dati[] = $row;
+            }
 
-        echo json_encode($dati);
+            echo json_encode($dati);
+        }
     } else {
         echo json_encode(["error" => "Nepareizs tips!"]);
     }
