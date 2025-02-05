@@ -19,7 +19,10 @@ if (!isset($_SESSION['loggedin'])) {
     <script src="assets/script.js" defer></script>
 </head>
 
-<body> 
+<body>
+
+<div class="content2">
+
     <div class="loggedin">
 		<nav class="navtop">
 			<div>
@@ -27,7 +30,7 @@ if (!isset($_SESSION['loggedin'])) {
                     <img src="assets/photos/icon.png" alt="Skolas logo" class="logo">
                     Liepājas Draudzīgā aicinājuma vidusskola
                 </h1>
-				<a href="profile.php"><i class="fas fa-user-circle"></i>Profils</a>
+				<a href="phplogin/profile.php"><i class="fas fa-user-circle"></i>Profils</a>
 				<a href="logout.php"><i class="fas fa-sign-out-alt"></i>Iziet</a>
 			</div>
 		</nav>
@@ -51,9 +54,9 @@ if (!isset($_SESSION['loggedin'])) {
     <h3>Detaļas:</h3>
     <div id="inventāraDetaļas"></div>
     <button onclick="pievienotJaunu()">Jauns</button>
-</div>
+    </div>
 
-<div id="labotFormu" style="display: none;">
+    <div id="labotFormu" style="display: none;">
     <h3>Veikt labošanu vai pievienošanu:</h3>
     <form onsubmit="saglabatDatus(); return false;">
         <label for="nosaukums">Nosaukums:</label>
@@ -70,28 +73,34 @@ if (!isset($_SESSION['loggedin'])) {
 
         <button type="submit">Saglabāt</button>
     </form>
+    </div>
 </div>
 
 
 <img src="assets/photos/skolasbilde22.jpg" alt="Fona attēls" class="background-img">
 
+
+
+<footer>
 <div class="footerContainer">
     <div class="socialIcons">
-        <a href=""><i class="fa-brands fa-facebook"></i></a>
-        <a href=""><i class="fa-brands fa-instagram"></i></a>
-        <a href=""><i class="fa-brands fa-youtube"></i></a>
+        <a href="https://www.facebook.com/5vsk.liepaja.edu.lv/events/?key=events&ref=page_internal&locale=lv"><i class="fa-brands fa-facebook"></i></a>
+        <a href="https://www.instagram.com/draudzigavsk/"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.youtube.com/@dalp5.vsk.30/videos"><i class="fa-brands fa-youtube"></i></a>
     </div>
     <div class="footerNav">
         <ul>
-            <li><a href="">Home</a></li>
-            <li><a href="">About</a></li>
-            <li><a href="">Contact us</a></li>
+            <li><a href="">Mājas</a></li>
+            <li><a href="">Par mums</a></li>
+            <li><a href="">Kontakti</a></li>
         </ul>
     </div>
-    <div class="footerBottom">
-        <p>Copyright &copy;2025; Liepājas Draudzīgā aicinājuma vidusskola</p>
-    </div>
+    
 </div>
+    <div class="footerBottom">
+        <p>&copy;2025; Liepājas Draudzīgā aicinājuma vidusskola</p>
+    </div>
+</footer>
 
 </body>
 </html>
