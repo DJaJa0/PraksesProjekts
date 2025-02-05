@@ -6,7 +6,7 @@ if (!isset($_SESSION['loggedin'])) {
 	header('Location: Login.php');
 	exit;
 }
-
+ 
 $DATABASE_HOST = 'sql7.freesqldatabase.com';
 $DATABASE_USER = 'sql7761322';
 $DATABASE_PASS = 'taU4zHrvby';
