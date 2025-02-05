@@ -1,4 +1,4 @@
-@ -1 +1,35 @@
+
 //saglabās datus no datu bāzā, kad tie tiks rediģēti
 <?php
 header('Content-Type: application/json');
@@ -34,4 +34,4 @@ if (isset($input["nosaukums"], $input["numurs"], $input["kabinets"])) {
 }
 
 $conn->close();
-?>s
+?>
