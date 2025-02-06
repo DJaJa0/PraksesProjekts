@@ -1,4 +1,4 @@
-body {
+body{
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
     margin: 0;
@@ -9,7 +9,7 @@ body {
     background-color: #0f2a36;
 }
 
-form, #saturs, #labotFormu {
+form, #saturs, #labotFormu{
     margin: 20px auto;
     padding: 20px;
     background-color: #fff;
@@ -18,19 +18,19 @@ form, #saturs, #labotFormu {
     max-width: 500px;
 }
 
-h3 {
+h3{
     margin-bottom: 10px;
 }
 
-#saturs {
+#saturs{
     display: none;
 }
 
-#labotFormu {
+#labotFormu{
     display: none;
 }
 
-button {
+button{
     background-color: #007bff;
     color: white;
     border: none;
@@ -40,16 +40,16 @@ button {
     margin-top: 10px;
 }
 
-button:hover {
+button:hover{
     background-color: #0056b3;
 }
 
-select {
+select{
     padding: 5px;
     font-size: 16px;
 }
 
-p {
+p{
     background-color: #e9ecef;
     padding: 10px;
     border-radius: 5px;
