@@ -3,10 +3,10 @@
 <?php
 header('Content-Type: application/json');
 
-$servername = "localhost";
-$username = "root";
-$password = "Gayfag.09";
-$dbname = "inventars";
+$servername = "sql7.freesqldatabase.com";
+$username = "sql7761322";
+$password = "taU4zHrvby";
+$dbname = "sql7761322";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
