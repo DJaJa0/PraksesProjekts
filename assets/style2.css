@@ -35,14 +35,14 @@ form button{
     width: 100%;
     padding: 10px;
     border-radius: 5px;
-    background-color: #00bcd4;
+    background-color: #007BFF;
     color: white;
     border: none;
     cursor: pointer;
 }
 
 form button:hover{
-    background-color: #007784;
+    background-color: #0056b3;
 }
 
 h3{
@@ -60,7 +60,7 @@ input, select{
 }
 
 button{
-    background-color: #00bcd4;
+    background-color: #007BFF;
     color: white;
     border: none;
     padding: 10px 15px;
@@ -68,6 +68,7 @@ button{
     border-radius: 5px;
     margin-top: 10px;
     width: 100%;
+    font-weight: bold;
 }
 
 .btn{
@@ -77,15 +78,18 @@ button{
     width: 100%;
     padding: 10px;
     border-radius: 5px;
-    background-color: #00bcd4;
+    background-color: #007BFF;
     color: white;
     border: none;
     cursor: pointer;
     text-align: center;
 }
 
-button:hover{
-    background-color: #007784;
+button:hover{ 
+    background-color: #0056b3;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s;
 }
 
 #labotFormu{
@@ -309,12 +313,83 @@ footer{
     color: white;
 }
 
+.footerBottom2{
+    background-color: #000;
+    padding: 20px;
+    text-align: center;
+    margin-top: auto; 
+}
+
+.footerBottom2 p{
+    color: white;
+}
+
+
+/*Atpakaļ poga no profile.php uz inventars.php*/
+
+.back-button {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.back-button:hover {
+    background-color: #0056b3;
+}
+/**/
+
+/*Ritiāšanas poga uz augšu*/
+#scrollTopBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    transition: opacity 0.3s, transform 0.3s;
+}
+
+#scrollTopBtn i {
+    font-size: 24px;
+}
+
+#scrollTopBtn:hover {
+    background-color: #0056b3;
+    transform: scale(1.1);
+}
+
+#scrollTopBtn.show {
+    display: block;
+}
+
+/**/
+
+
 .designer{
     opacity: 0.7;
     text-transform: uppercase;
     letter-spacing: 1px;
     font-weight: 400;
     margin: 0px 5px;
+}
+
+.button-container{
+    display: flex;
+    justify-content: center; 
+    gap: 10px; 
+    margin-top: 10px; 
 }
 
 @media (max-width: 700px){
