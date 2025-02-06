@@ -39,29 +39,40 @@ $stmt->close();
                     <img src="../assets/photos/icon.png" alt="Skolas logo" class="logo">
                     Liepājas Draudzīgā aicinājuma vidusskola
                 </h1>
-				<a href="profile.php"><i class="fas fa-user-circle"></i>Profile</a>
-				<a href="logout.php"><i class="fas fa-sign-out-alt"></i>Logout</a>
+				<a href="profile.php"><i class="fas fa-user-circle"></i>Profils</a>
+				<a href="logout.php"><i class="fas fa-sign-out-alt"></i>Iziet</a>
 			</div>
 		</nav>
 		<div class="content">
-			<h2>Profile Page</h2>
+			<h2>Profils</h2>
 			<div>
-				<p>Your account details are below:</p>
+				<p>Jūsu konta informācija:</p>
 				<table>
 					<tr>
-						<td>Username:</td>
+						<td>Lietotājvārds:</td>
 						<td><?=htmlspecialchars($_SESSION['name'], ENT_QUOTES)?></td>
 					</tr>
 					<tr>
-						<td>Password:</td>
+						<td>Parole:</td>
 						<td><?=htmlspecialchars($password, ENT_QUOTES)?></td>
 					</tr>
 					<tr>
-						<td>Email:</td>
+						<td>E-pasts:</td>
 						<td><?=htmlspecialchars($email, ENT_QUOTES)?></td>
 					</tr>
 				</table>
+				<br>
+        			<a href="../inventars.php" class="back-button">Atpakaļ</a>
 			</div>
 		</div>
+
+		<footer>
+
+	<footer>
+    <div class="footerBottom2">
+        <p>&copy;2025; Liepājas Draudzīgā aicinājuma vidusskola</p>
+    </div>
+	</footer>
+
 	</body>
 </html>
