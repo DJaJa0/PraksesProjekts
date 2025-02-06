@@ -1,10 +1,9 @@
 <?php
-
 session_start();
 
 if (!isset($_SESSION['loggedin'])) {
-	header('Location: Login.php');
-	exit;
+    header('Location: phplogin/Login.php');
+    exit;
 }
 ?>
 
@@ -31,7 +30,7 @@ if (!isset($_SESSION['loggedin'])) {
                     Liepājas Draudzīgā aicinājuma vidusskola
                 </h1>
 				<a href="phplogin/profile.php"><i class="fas fa-user-circle"></i>Profils</a>
-				<a href="logout.php"><i class="fas fa-sign-out-alt"></i>Iziet</a>
+				<a href="phplogin/logout.php"><i class="fas fa-sign-out-alt"></i>Iziet</a>
 			</div>
 		</nav>
 		<div class="content">
@@ -41,13 +40,12 @@ if (!isset($_SESSION['loggedin'])) {
     </div>
         
     <form>
-        <label for="inventars">Izvēlaties vienu:</label>
+        <label for="inventars"><h3>Izvēlaties vienu:</h3></label>
         <select name="inventars" id="inventars">
-            <option value="none">Izvēlieties</option>
+            <option value="none">Izvēlaties</option>
             <option value="dators">Datori</option>
             <option value="monitors">Monitori</option>
         </select>
-        <a href="phplogin/Login.php" class="btn">Iziet</a>
     </form>
 
     <div id="saturs">
@@ -71,7 +69,11 @@ if (!isset($_SESSION['loggedin'])) {
         <input type="text" id="kabinets" name="kabinets" required>
         <br>
 
+        <div class="button-container">
         <button type="submit">Saglabāt</button>
+        <button type="button" onclick="aizvertFormu()">Aizvērt</button>
+        </div>
+        
     </form>
     </div>
 </div>
@@ -101,6 +103,10 @@ if (!isset($_SESSION['loggedin'])) {
         <p>&copy;2025; Liepājas Draudzīgā aicinājuma vidusskola</p>
     </div>
 </footer>
+
+    <button onclick="scrollToTop()" id="scrollTopBtn" title="Uz augšu">
+    <i class="fas fa-chevron-up"></i>
+    </button>
 
 </body>
 </html>
