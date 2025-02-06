@@ -122,3 +122,31 @@ function pievienotJaunu() {
     pašreizējaisIndekss = null;
     document.getElementById("labotFormu").style.display = "block";
 }
+
+function aizvertFormu() {
+    document.getElementById("labotFormu").style.display = "none";
+}
+
+function pievienotJaunu() {
+    document.getElementById("labotFormu").style.display = "block";
+}
+
+
+//Ritināšanas poga uz augšu
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    let scrollTopBtn = document.getElementById("scrollTopBtn");
+
+    window.onscroll = function() {
+        if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+            scrollTopBtn.classList.add("show");
+        } else {
+            scrollTopBtn.classList.remove("show");
+        }
+    };
+
+    window.scrollToTop = function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+});
