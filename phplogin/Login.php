@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -11,7 +15,15 @@
 	<body>
 		<div class="login">
             <h1>LDAV datubāze</h1>
-			<h2>Login</h2>           
+			<h2>Pieslēgties</h2>
+
+			<?php
+            if (isset($_SESSION['error_message'])) {
+                echo '<p class="error-message">' . $_SESSION['error_message'] . '</p>';
+                unset($_SESSION['error_message']); 
+            }
+            ?>
+
 			<form action="authenticate.php" method="post">
 				<label for="username">
 					<i class="fas fa-user"></i>
@@ -21,8 +33,12 @@
 					<i class="fas fa-lock"></i>
 				</label>
 				<input type="password" name="password" placeholder="Parole" id="password" required>
-				<input type="submit" value="Login">
+				<input type="submit" value="Pieslēgties">
+				
 			</form>
+	
+			<a href="register.php" class="register-button">Reģistrēties</a>
+			
 		</div>
 	</body>
 </html>
