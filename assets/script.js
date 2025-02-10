@@ -150,3 +150,23 @@ document.addEventListener("DOMContentLoaded", function() {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     };
 });
+
+//konta dzēšana
+
+function showDeleteForm() {
+    document.getElementById("delete-form").style.display = "block";
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+    setTimeout(function () {
+        let errorMsg = document.getElementById("error-message");
+        if (errorMsg) {
+            errorMsg.style.opacity = "0"; 
+            setTimeout(() => errorMsg.style.display = "none", 1000);
+        }
+    }, 5000);
+});
+
+function hideDeleteForm() {
+    document.getElementById("delete-form").style.display = "none";
+}
