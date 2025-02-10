@@ -392,6 +392,91 @@ footer{
     margin-top: 10px; 
 }
 
+/*konta dzēšanai*/
+.error-message{
+    color: #fc2b2b;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 10px;
+    opacity: 1;
+    transition: opacity 1s ease-in-out;
+}
+
+.delete-button{
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #d9534f;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background 0.3s;
+    width: auto;
+    }
+    
+.delete-button:hover{
+        background-color: #c9302c; 
+    }
+
+.confirm-delete-button {
+    display: block;
+    margin: 10px auto; 
+    padding: 8px 16px; 
+    background-color: #b52b27; 
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    width: fit-content; 
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    }
+    
+.confirm-delete-button:hover{
+    background-color: #9e241f;       
+    }
+
+.close-form-button {
+    display: block;
+    margin: 10px auto;
+    padding: 8px 25px;
+    background-color: #007BFF;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 15px;
+    width: fit-content;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    }
+    
+.close-form-button:hover {
+    background-color: #0056b3;
+    }
+
+.account-delete-h2 {
+    margin: 0 auto; 
+    padding: 20px 0;
+    padding-bottom: 10px;
+    font-size: 22px;
+    border-bottom: 1px solid #e0e0e3;
+    color: #4a536e;
+    font-weight: 600;
+    text-align: center; 
+    width: 100%; 
+    }
+
+.account-delete-p{
+    padding-top: 40px;
+    padding-bottom: 10px;
+}
+
+/**/
+
 @media (max-width: 700px){
     .footerNav ul{
         flex-direction: column;
