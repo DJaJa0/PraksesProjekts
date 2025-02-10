@@ -30,7 +30,10 @@ $stmt->close();
 		<meta charset="utf-8">
 		<title>Profile Page</title>
 		<link href="../assets/style2.css" rel="stylesheet" type="text/css">
+		<script src="../assets/script.js" defer></script>
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+
 	</head>
 	<body class="loggedin">
 		<nav class="navtop">
@@ -63,6 +66,23 @@ $stmt->close();
 				</table>
 				<br>
         			<a href="../inventars.php" class="back-button">Atpakaļ</a>
+
+					<button onclick="showDeleteForm()" class="delete-button">🗑 Dzēst kontu</button>
+
+					<?php if (isset($_SESSION['error_message'])): ?>
+    					<p id="error-message" class="error-message"><?= $_SESSION['error_message'] ?></p>
+    					<?php unset($_SESSION['error_message']); ?>
+					<?php endif; ?>
+
+				<div id="delete-form" style="display: none;">
+					<form action="delete_account.php" method="post">
+						<h2 class="account-delete-h2">Konta dzēšana</h2>
+						<p class="account-delete-p">Lūdzu, ievadiet savu konta paroli konta dzēšanai:</p>
+						<input type="password" name="password" placeholder="Ievadiet paroli..."required>
+						<input type="submit" value="Apstiprināt dzēšanu" class="confirm-delete-button">
+						<button type="button" onclick="hideDeleteForm()" class="close-form-button">Aizvērt formu</button>
+					</form>
+				</div>
 			</div>
 		</div>
 
