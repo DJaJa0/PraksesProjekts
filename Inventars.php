@@ -45,6 +45,10 @@ if (!isset($_SESSION['loggedin'])) {
             <option value="none">Izvēlaties</option>
             <option value="dators">Datori</option>
             <option value="monitors">Monitori</option>
+            <option value="projektori">Projektori</option>
+            <option value="tumbas">Tumbas</option>
+            <option value="printeri">Printeri</option>
+            <option value="dok">Dok_kam_nosaukums</option>
         </select>
     </form>
 
