@@ -107,10 +107,10 @@ $stmt->close();
 			</div>
 		</div>
 
-		<footer>
+	
 
-	<footer>
-    <div class="footerBottom2">
+		<footer>
+    <div class="footerBottom">
         <p>&copy;2025; Liepājas Draudzīgā aicinājuma vidusskola</p>
     </div>
 	</footer>
