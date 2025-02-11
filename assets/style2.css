@@ -179,6 +179,7 @@ table tr:hover{
 	width: 1000px;
 	margin: 0 auto;
     padding: 10px;
+    flex: 1;
 }
 
 .content h2{
@@ -313,12 +314,7 @@ footer{
     color: white;
 }
 
-.footerBottom2{
-    background-color: #000;
-    padding: 20px;
-    text-align: center;
-    margin-top: auto; 
-}
+
 
 .footerBottom2 p{
     color: white;
