@@ -170,3 +170,13 @@ document.addEventListener("DOMContentLoaded", function () {
 function hideDeleteForm() {
     document.getElementById("delete-form").style.display = "none";
 }
+
+//Konta paroles
+function hidePasswordForm(){
+    document.getElementById("password-form").style.display = "none"; 
+}
+
+function hidePassword() {
+    location.reload(); 
+}
+
