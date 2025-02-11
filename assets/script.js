@@ -25,7 +25,17 @@ function ieladetDatus() {
         return;
     }
 
-    let tips = selectElement.value;
+    let tipsMap = {
+        "dators": "datori",
+        "monitors": "monitori",
+        "projektors": "projektori",
+        "tumbas": "tumbas",
+        "printers": "printeri",
+        "dok": "dok"
+    };
+
+    let tips = tipsMap[selectElement.value] || selectElement.value; 
+
     console.log(`Izvēlēts inventārs: ${tips}`);
 
     if (tips === "none") {
