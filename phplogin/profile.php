@@ -50,20 +50,41 @@ $stmt->close();
 			<h2>Profils</h2>
 			<div>
 				<p>Jūsu konta informācija:</p>
+
 				<table>
-					<tr>
-						<td>Lietotājvārds:</td>
-						<td><?=htmlspecialchars($_SESSION['name'], ENT_QUOTES)?></td>
-					</tr>
-					<tr>
-						<td>Parole:</td>
-						<td><?=htmlspecialchars($password, ENT_QUOTES)?></td>
-					</tr>
-					<tr>
-						<td>E-pasts:</td>
-						<td><?=htmlspecialchars($email, ENT_QUOTES)?></td>
-					</tr>
-				</table>
+                <tr>
+                    <td>Lietotājvārds:</td>
+                    <td><?= htmlspecialchars($_SESSION['name'], ENT_QUOTES) ?></td>
+                </tr>
+                <tr>
+    				<td>Parole:</td>
+    				<td>
+        			<?php if (isset($_SESSION['real_password'])): ?>
+            		<span id="password-text"><?= htmlspecialchars($_SESSION['real_password'], ENT_QUOTES) ?></span>
+            		<button id="hide-password-button" class="hide-password-button" onclick="hidePassword()"> Paslēpt paroli</button>
+            		<?php unset($_SESSION['real_password']); ?>
+        			<?php else: ?>
+            			********
+            		<button class="show-password-button" onclick="document.getElementById('password-form').style.display='block'">👁 Rādīt paroli</button>
+       			 	<?php endif; ?>
+    				</td>
+				</tr>
+                <tr>
+                    <td>E-pasts:</td>
+                    <td><?= htmlspecialchars($email, ENT_QUOTES) ?></td>
+                </tr>
+            </table>
+
+			<div id="password-form" style="display: none;">
+                <form action="verify_password.php" method="post">
+					<h2 class="account-delete-h2">Konta paroles apskatīšana</h2>
+					<p class="account-delete-p">Lūdzu, ievadiet savu konta paroli:</p>
+                    <input type="password" name="password" placeholder="Ievadiet paroli..." required>
+                    <input type="submit" value="Apstiprināt" class="confirm-show-button">
+					<button type="button" onclick="hidePasswordForm()" class="close-form-button">Aizvērt formu</button>
+                </form>
+            </div>
+
 				<br>
         			<a href="../inventars.php" class="back-button">Atpakaļ</a>
 
