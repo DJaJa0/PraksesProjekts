@@ -15,6 +15,7 @@ if ($conn->connect_error) {
 
 if (isset($_GET['tips'])) {
     $tips = strtolower($_GET['tips']); 
+    error_log("Saņemtais tips: " . $tips); // Debugging logs
     $page = isset($_GET['page']) ? (int)$_GET['page'] : 1; 
     $limit = 5;
     $offset = ($page - 1) * $limit; 
@@ -23,7 +24,10 @@ if (isset($_GET['tips'])) {
     $lauki = [
         "datori" => ["Datora_nosaukums", "Datora_nr"],
         "monitori" => ["Monitora_nosaukums", "Monitora_nr"],
-        "projektori" => ["Projektora_nosaukums", "Projektora_nr"]
+        "projektori" => ["Projektora_nosaukums", "Projektora_nr"],
+        "tumbas" => ["Tumbas_nosaukums", "Tumbas_nr"],
+        "printeri" => ["Printera_nosaukums", "Printera_nr"],
+        "dok" => ["Dok_kam_nosaukums", "Dok_kam_nr"]
     ];
 
     if (isset($lauki[$tips])) {
