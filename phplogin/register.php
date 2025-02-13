@@ -10,6 +10,7 @@ session_start();
     <title>Reģistrācija</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
     <link rel="stylesheet" href="style.css">
+    <script src="../assets/script.js" defer></script>
 </head>
 <body>
     <div class="login">
@@ -37,9 +38,14 @@ session_start();
             <input type="email" name="email" id="email" placeholder="E-pasts" required>
 
             <label for="password">
-                <i class="fas fa-lock"></i>
-            </label>
-            <input type="password" name="password" id="password" placeholder="Parole" required>
+        			<i class="fas fa-lock"></i>
+    			</label>
+    				<div class="password-container">
+        				<input type="password" name="password" placeholder="Parole" id="password" required>
+        				<span class="password-toggle" id="togglePassword">
+           				 <i class="fas fa-eye"></i>
+        				</span>
+    				</div>
 
             <input type="submit" value="Reģistrēties">
         </form>
