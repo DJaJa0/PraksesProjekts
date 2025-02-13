@@ -97,7 +97,7 @@ if (!isset($_SESSION['loggedin'])) {
     <div class="footerNav">
         <ul>
             <li><a href="">Mājas</a></li>
-            <li><a href="">Par mums</a></li>
+            <li><a href="parmums.php">Par mums</a></li>
             <li><a href="">Kontakti</a></li>
         </ul>
     </div>
