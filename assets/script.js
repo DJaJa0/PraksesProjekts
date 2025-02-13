@@ -115,6 +115,38 @@ function paraditDatus() {
 
     inventaraDetaļas.innerHTML = html;
 }
+function saglabatDatus() {
+    let nosaukums = document.getElementById("nosaukums").value;
+    let apraksts = document.getElementById("apraksts").value;
+    let kabinets = document.getElementById("kabinets").value;
+    
+    let dati = {
+        nosaukums: nosaukums,
+        numurs: apraksts,
+        kabinets: kabinets
+    };
+
+    if (pašreizējaisIndekss !== null) {
+        dati.id = dati[pašreizējaisIndekss].id; // Piešķir ID rediģēšanas gadījumā
+    }
+
+    fetch('/PraksesProjekts/pagFaili/saglabat.php', {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(dati)
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.message) {
+            alert(data.message);
+            aizvertFormu();
+            ieladetDatus(); // Pārlādē datus
+        } else {
+            alert("Kļūda: " + data.error);
+        }
+    })
+    .catch(error => console.error("Kļūda saglabājot:", error));
+}
 
 function labot(index) {
     pašreizējaisIndekss = index;
