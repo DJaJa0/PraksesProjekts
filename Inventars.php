@@ -50,6 +50,7 @@ if (!isset($_SESSION['loggedin'])) {
             <option value="printeri">Printeri</option>
             <option value="dok">Dok_kam_nosaukums</option>
         </select>
+        <input type="text" id="searchInput" placeholder="Meklēt...">
     </form>
 
     <div id="saturs">
