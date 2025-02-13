@@ -132,3 +132,25 @@ body::after {
     font-weight: bold;
 }
 
+.password-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.password-container input {
+    width: 100%;
+    padding-right: 35px; 
+}
+
+.password-toggle {
+    position: absolute;
+    right: 10px;
+    transform: translateY(-40%);
+    cursor: pointer;
+    font-size: 18px;
+    user-select: none;
+}
+
+
+
