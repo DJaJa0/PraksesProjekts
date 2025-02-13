@@ -239,6 +239,28 @@ document.addEventListener("DOMContentLoaded", function (){
     });
 });
 
+//slideshow
+
+let slideIndex = 0;
+    const slides = document.querySelectorAll(".slide");
+
+    function showSlides() {
+        slides.forEach((slide, index) => {
+            slide.style.display = (index === slideIndex) ? "block" : "none";
+        });
+    }
+
+    function changeSlide(direction) {
+        slideIndex += direction;
+        if (slideIndex >= slides.length) slideIndex = 0;
+        if (slideIndex < 0) slideIndex = slides.length - 1;
+        showSlides();
+    }
+
+    setInterval(() => changeSlide(1), 4000);
+
+    showSlides();
+
 
 
 
