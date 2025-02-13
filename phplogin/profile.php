@@ -39,7 +39,7 @@ $stmt->close();
 		<nav class="navtop">
 			<div>
 				<h1>
-                    <img src="../assets/photos/icon.png" alt="Skolas logo" class="logo">
+					<img src="../assets/photos/icon.png" alt="Skolas logo" class="logo" onclick="window.location.href='../inventars.php';">
                     Liepājas Draudzīgā aicinājuma vidusskola
                 </h1>
 				<a href="profile.php"><i class="fas fa-user-circle"></i>Profils</a>
