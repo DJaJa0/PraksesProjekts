@@ -1,53 +1,59 @@
 <?php
 header('Content-Type: application/json');
-ini_set('display_errors', 1);
-error_reporting(E_ALL);
+ini_set('display_errors', 1); // Parāda kļūdas
+ini_set('log_errors', 1); // Aktivizē kļūdu žurnālu
+error_log('/path_to_error_log'); // Norādiet pareizu ceļu uz kļūdu žurnālu
 
-// Savienojuma parametri
+// Savienojuma dati
 $servername = "sql7.freesqldatabase.com";
 $username = "sql7761322";
 $password = "taU4zHrvby";
 $dbname = "sql7761322";
 
-// Izveido savienojumu
+// Savienojuma izveide
 $conn = new mysqli($servername, $username, $password, $dbname);
 
+// Pārbauda savienojumu
 if ($conn->connect_error) {
+    error_log("Savienojuma kļūda: " . $conn->connect_error); // Saglabā kļūdu žurnālā
     echo json_encode(["error" => "Savienojuma kļūda: " . $conn->connect_error]);
     exit;
 }
 
-// Iegūst un dekodē saņemto JSON
+// Saņem JSON un pārveido par PHP masīvu
 $input = json_decode(file_get_contents("php://input"), true);
 
+// Ja nav saņemti dati vai formāts nederīgs
 if (!$input) {
-    echo json_encode(["error" => "Dati nav saņemti vai JSON ir nederīgs"]);
+    error_log("Nepareizs JSON formāts vai dati nav saņemti!"); // Kļūdas reģistrēšana
+    echo json_encode(["error" => "Nepareizs JSON formāts vai dati nav saņemti!"]);
     exit;
 }
 
-// Pārbauda, vai ir nepieciešamie dati
+// Pārbauda, vai ir nepieciešamie lauki
 if (!isset($input["nosaukums"], $input["numurs"], $input["kabinets"])) {
-    echo json_encode(["error" => "Nepilnīgi dati"]);
+    error_log("Nepilnīgi dati!"); // Kļūdas reģistrēšana
+    echo json_encode(["error" => "Nepilnīgi dati!"]);
     exit;
 }
 
-// Attīra datus SQL drošībai
+// SQL drošībai
 $nosaukums = $conn->real_escape_string($input["nosaukums"]);
 $numurs = $conn->real_escape_string($input["numurs"]);
 $kabinets = $conn->real_escape_string($input["kabinets"]);
 
-// Ja ir ID, tad veicam labošanu, pretējā gadījumā pievienojam jaunu ierakstu
+// Ja ir ID, tad tiek labots, citādi pievienots jauns ieraksts
 if (!empty($input["id"])) {
-    $id = intval($input["id"]); // Drošāka ID konvertācija
+    $id = intval($input["id"]);
     $sql = "UPDATE inventarizacija_2024 
-            SET Nosaukums='$nosaukums', Numurs='$numurs', Kab='$kabinets' 
+            SET Datora_nosaukums='$nosaukums', Datora_nr='$numurs', Kab='$kabinets' 
             WHERE id=$id";
 } else {
-    $sql = "INSERT INTO inventarizacija_2024 (Nosaukums, Numurs, Kab) 
+    $sql = "INSERT INTO inventarizacija_2024 (Datora_nosaukums, Datora_nr, Kab) 
             VALUES ('$nosaukums', '$numurs', '$kabinets')";
 }
 
-// Izpilda vaicājumu un atgriež rezultātu
+// Izpilda SQL
 if ($conn->query($sql) === TRUE) {
     if (!empty($input["id"])) {
         echo json_encode(["message" => "Ieraksts veiksmīgi atjaunināts", "id" => $input["id"]]);
@@ -55,11 +61,9 @@ if ($conn->query($sql) === TRUE) {
         echo json_encode(["message" => "Jauns ieraksts veiksmīgi pievienots", "id" => $conn->insert_id]);
     }
 } else {
-    echo json_encode(["error" => "Kļūda saglabājot datus: " . $conn->error]);
+    error_log("Kļūda saglabājot: " . $conn->error); // Kļūdas reģistrēšana
+    echo json_encode(["error" => "Kļūda saglabājot: " . $conn->error]);
 }
-
-// Debug fails, lai redzētu ienākošos datus
-file_put_contents("debug_log.txt", json_encode($input, JSON_PRETTY_PRINT) . "\n", FILE_APPEND);
 
 // Aizver savienojumu
 $conn->close();
