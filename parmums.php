@@ -35,15 +35,18 @@ if (!isset($_SESSION['loggedin'])) {
         </nav>
         <div class="content">
             <h2>Par mūsu skolu</h2>
-            
+
             <div class="slideshow-container">
-                <img class="slide active" src="assets/photos/skolasbilde22.jpg" alt="Skolas bilde 1">
-                <img class="slide" src="assets/photos/skolasbilde2.jpg" alt="Skolas bilde 2">
-                <img class="slide" src="assets/photos/skolasbilde3.jpg" alt="Skolas bilde 3">
-                
-                <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
-                <button class="next" onclick="changeSlide(1)">&#10095;</button>
+                <img class="slide active" src="assets/photos/skolasbilde22.jpg">
+                <img class="slide" src="assets/photos/skolasbilde33.jpg">
+                <img class="slide" src="assets/photos/skolasbilde44.jpg">
             </div>
+
+            <div class="controls">
+                <button class="prev" onclick="changeSlide(-1)">❮ Prev</button>
+                <button class="next" onclick="changeSlide(1)">Next ❯</button>
+            </div>
+
 
             <p>
                 Liepājas Draudzīgā aicinājuma vidusskola ir viena no vadošajām skolām reģionā, piedāvājot kvalitatīvu izglītību un modernu mācību vidi. Mūsu mērķis ir sagatavot skolēnus nākotnes izaicinājumiem, nodrošinot inovatīvas mācību metodes un draudzīgu vidi.
