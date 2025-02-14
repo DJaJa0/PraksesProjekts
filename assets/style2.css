@@ -522,6 +522,7 @@ footer{
     position: relative;
     max-width: 800px;
     margin: auto;
+    text-align: center; 
 }
 
 .slide {
@@ -534,21 +535,23 @@ footer{
     display: block;
 }
 
-.prev, .next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    padding: 10px;
-    cursor: pointer;
-    border: none;
-    border-radius: 50%;
-    font-size: 18px;
+
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 0px; 
 }
 
-.prev { left: 10px; }
-.next { right: 10px; }
+.prev, .next {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 10px 20px;
+    cursor: pointer;
+    border: none;
+    font-size: 18px;
+    border-radius: 5px;
+}
 
 .prev:hover, .next:hover {
     background-color: rgba(0, 0, 0, 0.8);
