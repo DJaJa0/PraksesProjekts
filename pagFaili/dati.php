@@ -34,9 +34,10 @@ if (isset($_GET['tips'])) {
         $nosaukums = $lauki[$tips][0];
         $numurs = $lauki[$tips][1];
 
-        $sql = "SELECT Kab AS kabinets, $nosaukums AS nosaukums, $numurs AS numurs 
-                FROM inventarizacija_2024 
-                LIMIT $limit OFFSET $offset";
+        $sql = "SELECT id, Kab AS kabinets, $nosaukums AS nosaukums, $numurs AS numurs 
+        FROM inventarizacija_2024 
+        LIMIT $limit OFFSET $offset";
+
         $result = $conn->query($sql);
 
         if ($result === false) {
@@ -57,4 +58,4 @@ if (isset($_GET['tips'])) {
 }
 
 $conn->close();
-?>
+?> 
