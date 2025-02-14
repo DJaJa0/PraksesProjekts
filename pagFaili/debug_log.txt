@@ -1,0 +1,30 @@
+{
+    "nosaukums": "LSC C 2",
+    "numurs": "12203160",
+    "kabinets": "70"
+}
+{
+    "nosaukums": "Lenovo 666",
+    "numurs": "999",
+    "kabinets": "209"
+}
+{
+    "nosaukums": "Samsung Syncmaster B2030",
+    "numurs": "00289466",
+    "kabinets": "90"
+}
+{
+    "nosaukums": "LSC C 2",
+    "numurs": "12203160",
+    "kabinets": "79"
+}
+{
+    "nosaukums": "LSC C 2",
+    "numurs": "12203160",
+    "kabinets": "300"
+}
+{
+    "nosaukums": "LSC C 2",
+    "numurs": "12203160",
+    "kabinets": "3004"
+}
