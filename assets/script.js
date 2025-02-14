@@ -60,12 +60,10 @@ function ieladetDatus() {
         });
 }
 
-
 function nākamāLapa() {
     pašreizējāLapa++;
     ieladetDatus();
 }
-
 
 function iepriekšējāLapa() {
     if (pašreizējāLapa > 1) {
@@ -73,7 +71,6 @@ function iepriekšējāLapa() {
         ieladetDatus();
     }
 }
-
 
 function paraditDatus() {
     console.log("Rāda datus tabulā...");
@@ -115,38 +112,63 @@ function paraditDatus() {
 
     inventaraDetaļas.innerHTML = html;
 }
+
 function saglabatDatus() {
     let nosaukums = document.getElementById("nosaukums").value;
     let apraksts = document.getElementById("apraksts").value;
     let kabinets = document.getElementById("kabinets").value;
-    
+    let ierakstaID = document.getElementById("ierakstaID").value; // Noslēptais ID lauks
+
+    // Pārbauda, vai visi nepieciešamie lauki ir aizpildīti
+    if (!nosaukums || !apraksts || !kabinets) {
+        alert("Lūdzu, aizpildiet visus laukus.");
+        return;
+    }
+
     let dati = {
         nosaukums: nosaukums,
         numurs: apraksts,
         kabinets: kabinets
     };
 
-    if (pašreizējaisIndekss !== null) {
-        dati.id = dati[pašreizējaisIndekss].id; // Piešķir ID rediģēšanas gadījumā
+    // Ja ir ieraksta ID, pievienojam to dati objektam
+    if (ierakstaID) {
+        dati.id = ierakstaID; // pievienojam ID, lai labotu ierakstu
     }
+
+    console.log("Nosūtāmie dati:", dati); // Debugging
 
     fetch('/PraksesProjekts/pagFaili/saglabat.php', {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(dati)
     })
-    .then(response => response.json())
-    .then(data => {
+    .then(response => response.text()) // Pārveidojam atbildi uz tekstu
+    .then(responseText => {
+        let data;
+        try {
+            data = JSON.parse(responseText); // Mēģinām pārvērst atbildi par JSON
+        } catch (e) {
+            console.error("Kļūda atbildē, nepareizs JSON formāts:", responseText);
+            alert("Nezināma kļūda servera atbildē. Mēģiniet vēlreiz.");
+            return;
+        }
+
+        console.log("Atbilde no servera:", data);
         if (data.message) {
             alert(data.message);
             aizvertFormu();
             ieladetDatus(); // Pārlādē datus
         } else {
-            alert("Kļūda: " + data.error);
+            alert("Kļūda: " + (data.error || "Nezināma kļūda!"));
         }
     })
-    .catch(error => console.error("Kļūda saglabājot:", error));
+    .catch(error => {
+        console.error("Kļūda saglabājot:", error);
+        alert("Kļūda saglabājot datus. Pārbaudiet savienojumu un mēģiniet vēlreiz.");
+    });
 }
+
 
 function labot(index) {
     pašreizējaisIndekss = index;
@@ -154,6 +176,7 @@ function labot(index) {
     document.getElementById("nosaukums").value = ieraksts.nosaukums;
     document.getElementById("apraksts").value = ieraksts.numurs;
     document.getElementById("kabinets").value = ieraksts.kabinets;
+    document.getElementById("ierakstaID").value = ieraksts.id; // Ievieto ID noslēptajā laukā
     document.getElementById("labotFormu").style.display = "block";
 }
 
@@ -169,14 +192,7 @@ function aizvertFormu() {
     document.getElementById("labotFormu").style.display = "none";
 }
 
-function pievienotJaunu() {
-    document.getElementById("labotFormu").style.display = "block";
-}
-
-
-//Ritināšanas poga uz augšu
-
-
+// Ritināšanas poga uz augšu
 document.addEventListener("DOMContentLoaded", function() {
     let scrollTopBtn = document.getElementById("scrollTopBtn");
 
@@ -193,8 +209,7 @@ document.addEventListener("DOMContentLoaded", function() {
     };
 });
 
-//konta dzēšana
-
+// Konta dzēšana
 function showDeleteForm() {
     document.getElementById("delete-form").style.display = "block";
 }
@@ -213,7 +228,7 @@ function hideDeleteForm() {
     document.getElementById("delete-form").style.display = "none";
 }
 
-//Konta paroles
+// Konta paroles
 function hidePasswordForm(){
     document.getElementById("password-form").style.display = "none"; 
 }
@@ -222,9 +237,8 @@ function hidePassword() {
     location.reload(); 
 }
 
-//Paroles parādīšana Login.php
-
-document.addEventListener("DOMContentLoaded", function (){
+// Paroles parādīšana Login.php
+document.addEventListener("DOMContentLoaded", function () {
     const passwordInput = document.getElementById("password");
     const togglePassword = document.getElementById("togglePassword");
 
@@ -232,35 +246,31 @@ document.addEventListener("DOMContentLoaded", function (){
         if(passwordInput.type === "password"){
             passwordInput.type = "text";
             togglePassword.innerHTML = '<i class="fas fa-eye-slash"></i>';
-        }else{
+        } else {
             passwordInput.type = "password";
             togglePassword.innerHTML = '<i class="fas fa-eye"></i>'; 
         }
     });
 });
 
-//slideshow
-
+// Slideshow
 let slideIndex = 0;
-    const slides = document.querySelectorAll(".slide");
+const slides = document.querySelectorAll(".slide");
 
-    function showSlides() {
-        slides.forEach((slide, index) => {
-            slide.style.display = (index === slideIndex) ? "block" : "none";
-        });
-    }
+function showSlides() {
+    slides.forEach((slide, index) => {
+        slide.style.display = (index === slideIndex) ? "block" : "none";
+    });
+}
 
-    function changeSlide(direction) {
-        slideIndex += direction;
-        if (slideIndex >= slides.length) slideIndex = 0;
-        if (slideIndex < 0) slideIndex = slides.length - 1;
-        showSlides();
-    }
-
-    setInterval(() => changeSlide(1), 4000);
-
+function changeSlide(direction) {
+    slideIndex += direction;
+    if (slideIndex >= slides.length) slideIndex = 0;
+    if (slideIndex < 0) slideIndex = slides.length - 1;
     showSlides();
+}
 
+showSlides();
 
 
 
