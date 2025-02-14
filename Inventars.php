@@ -60,19 +60,22 @@ if (!isset($_SESSION['loggedin'])) {
     </div>
 
     <div id="labotFormu" style="display: none;">
+    <input type="hidden" id="ierakstaID">
+
     <h3>Veikt labošanu vai pievienošanu:</h3>
     <form onsubmit="saglabatDatus(); return false;">
+    
         <label for="nosaukums">Nosaukums:</label>
         <input type="text" id="nosaukums" name="nosaukums" required>
-        <br>
+        
 
         <label for="apraksts">Inventāra Nr.:</label>
         <input type="text" id="apraksts" name="apraksts" required>
-        <br>
+        
 
         <label for="kabinets">Kabineta Nr.:</label>
         <input type="text" id="kabinets" name="kabinets" required>
-        <br>
+        
 
         <div class="button-container">
         <button type="submit">Saglabāt</button>
