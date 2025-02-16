@@ -257,23 +257,23 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // Slideshow
-let slideIndex = 0;
-const slides = document.querySelectorAll(".slide");
 
-function showSlides() {
-    slides.forEach((slide, index) => {
-        slide.style.display = (index === slideIndex) ? "block" : "none";
-    });
+let currentIndex = 0;
+const slider = document.querySelector(".slider");
+const dots = document.querySelectorAll(".nav-dot");
+const totalSlides = dots.length;
+
+function changeSlide(index) {
+    currentIndex = index;
+    const offset = -index * 100; // Pārvieto par 100% platumu
+    slider.style.transform = `translateX(${offset}%)`;
+
+    // Aktīvais punkts
+    dots.forEach(dot => dot.classList.remove("active"));
+    dots[index].classList.add("active");
 }
 
-function changeSlide(direction) {
-    slideIndex += direction;
-    if (slideIndex >= slides.length) slideIndex = 0;
-    if (slideIndex < 0) slideIndex = slides.length - 1;
-    showSlides();
-}
-
-showSlides();
-
+// Sākumā atzīmē pirmo punktu kā aktīvu
+dots[currentIndex].classList.add("active");
 
 
