@@ -118,17 +118,20 @@ function saglabatDatus() {
     let apraksts = document.getElementById("apraksts").value;
     let kabinets = document.getElementById("kabinets").value;
     let ierakstaID = document.getElementById("ierakstaID").value; // Noslēptais ID lauks
+    let inventarsSelect = document.getElementById("inventars");  // Izvēlētais inventārs
+    let tips = inventarsSelect ? inventarsSelect.value : null;
 
     // Pārbauda, vai visi nepieciešamie lauki ir aizpildīti
-    if (!nosaukums || !apraksts || !kabinets) {
-        alert("Lūdzu, aizpildiet visus laukus.");
+    if (!nosaukums || !apraksts || !kabinets || !tips) {
+        alert("Lūdzu, aizpildiet visus laukus un izvēlieties ierīces kategoriju.");
         return;
     }
 
     let dati = {
         nosaukums: nosaukums,
         numurs: apraksts,
-        kabinets: kabinets
+        kabinets: kabinets,
+        tips: tips  // Nosūtām arī ierīces tipu
     };
 
     // Ja ir ieraksta ID, pievienojam to dati objektam
