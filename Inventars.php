@@ -100,9 +100,9 @@ if (!isset($_SESSION['loggedin'])) {
     </div>
     <div class="footerNav">
         <ul>
-            <li><a href="">Mājas</a></li>
+            <li><a href="inventars.php">Mājas</a></li>
             <li><a href="parmums.php">Par mums</a></li>
-            <li><a href="">Kontakti</a></li>
+            <li><a href="kontakti.php">Kontakti</a></li>
         </ul>
     </div>
     
