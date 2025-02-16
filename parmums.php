@@ -36,36 +36,47 @@ if (!isset($_SESSION['loggedin'])) {
         <div class="content">
             <h2>Par mūsu skolu</h2>
 
-            <div class="slideshow-container">
-                <img class="slide active" src="assets/photos/skolasbilde22.jpg">
-                <img class="slide" src="assets/photos/skolasbilde33.jpg">
-                <img class="slide" src="assets/photos/skolasbilde44.jpg">
+            <section class="about-container">
+                <div class="about-content">
+                    <h2>LDAV</h2>
+                <p>
+            <strong>Liepājas Draudzīgā aicinājuma vidusskola</strong> ir viena no vadošajām skolām reģionā, piedāvājot kvalitatīvu izglītību un modernu mācību vidi. Mūsu mērķis ir sagatavot skolēnus nākotnes izaicinājumiem, nodrošinot inovatīvas mācību metodes un draudzīgu vidi.
+                </p>
             </div>
 
-            <div class="controls">
-                <button class="prev" onclick="changeSlide(-1)">❮ Prev</button>
-                <button class="next" onclick="changeSlide(1)">Next ❯</button>
+             <div class="values-section">
+                <h3><i class="fas fa-star"></i> Mūsu vērtības</h3>
+                    <ul class="values-list">
+                     <li><i class="fas fa-book-open"></i> Izcilība izglītībā</li>
+                     <li><i class="fas fa-lightbulb"></i> Radošums un inovācijas</li>
+                     <li><i class="fas fa-handshake"></i> Draudzīgums un cieņa</li>
+                     <li><i class="fas fa-leaf"></i> Videi draudzīga domāšana</li>
+                 </ul>
             </div>
 
-
-            <p>
-                Liepājas Draudzīgā aicinājuma vidusskola ir viena no vadošajām skolām reģionā, piedāvājot kvalitatīvu izglītību un modernu mācību vidi. Mūsu mērķis ir sagatavot skolēnus nākotnes izaicinājumiem, nodrošinot inovatīvas mācību metodes un draudzīgu vidi.
-            </p>
-            
-            <h3>Mūsu vērtības:</h3>
-            <ul>
-                <li>Izcilība izglītībā</li>
-                <li>Radošums un inovācijas</li>
-                <li>Draudzīgums un cieņa</li>
-                <li>Videi draudzīga domāšana</li>
-            </ul>
-            
-            <h3>Sasniegumi un tradīcijas:</h3>
-            <p>
-                Mūsu skola lepojas ar daudziem sasniegumiem zinātnē, mākslā un sportā. Skolēni piedalās dažādos konkursos un olimpiādēs, iegūstot augstas vietas gan valsts, gan starptautiskā līmenī.
-            </p>
-        </div>
+        <div class="achievements-section">
+            <h3><i class="fas fa-trophy"></i> Sasniegumi un tradīcijas</h3>
+        <p>
+            Mūsu skola lepojas ar daudziem sasniegumiem zinātnē, mākslā un sportā. Skolēni piedalās dažādos konkursos un olimpiādēs, iegūstot augstas vietas gan valsts, gan starptautiskā līmenī.
+        </p>
     </div>
+    </section>
+
+            <section class="container2">
+                <h3 class="h33">Attēli</h3> 
+                <div class="slider-wrapper">
+                <div class="slider" id="slider">
+                    <img src="assets/photos/skolasbilde22.jpg" alt="Skolas bilde 1"/>
+                    <img src="assets/photos/skolasbilde33.jpg" alt="Skolas bilde 2"/>
+                    <img src="assets/photos/skolasbilde44.jpg" alt="Skolas bilde 3"/>
+                </div>
+                <div class="slider-nav">
+                    <span class="nav-dot" onclick="changeSlide(0)"></span>
+                    <span class="nav-dot" onclick="changeSlide(1)"></span>
+                    <span class="nav-dot" onclick="changeSlide(2)"></span>
+                </div>
+                </div>
+            </section>
 
 </div>
 
