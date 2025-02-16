@@ -43,7 +43,7 @@ if ($stmt = $con->prepare('SELECT id, password FROM accounts WHERE username = ?'
             $_SESSION['name'] = $username;
             $_SESSION['id'] = $id;
 
-            header('Location: ../Inventars.php');
+            header('Location: ../index.php');
             exit;
         } else {
             $_SESSION['error_message'] = 'Nepareizs lietotājvārds un/vai parole!';
