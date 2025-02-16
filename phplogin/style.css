@@ -152,6 +152,45 @@ body::after {
     user-select: none;
 }
 
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    .login {
+        width: 90%;
+        padding: 15px;
+    }
+
+    .login form input[type="text"],
+    .login form input[type="email"],
+    .login form input[type="password"] {
+        width: 100%;
+    }
+
+    .password-container {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .login {
+        width: 95%;
+        padding: 10px;
+    }
+
+    .login h1, .login h2 {
+        font-size: 22px;
+    }
+
+    .login form input[type="text"],
+    .login form input[type="email"],
+    .login form input[type="password"],
+    .password-container {
+        width: 100%;
+    }
+}
+
 
 
 
