@@ -26,7 +26,7 @@ if (!isset($_SESSION['loggedin'])) {
 		<nav class="navtop">
 			<div>
 				<h1>
-                <img src="assets/photos/icon.png" alt="Skolas logo" class="logo" onclick="window.location.href='inventars.php';">
+                <img src="assets/photos/icon.png" alt="Skolas logo" class="logo" onclick="window.location.href='index.php';">
                     Liepājas Draudzīgā aicinājuma vidusskola
                 </h1>
 				<a href="phplogin/profile.php"><i class="fas fa-user-circle"></i>Profils</a>
@@ -100,7 +100,7 @@ if (!isset($_SESSION['loggedin'])) {
     </div>
     <div class="footerNav">
         <ul>
-            <li><a href="inventars.php">Mājas</a></li>
+            <li><a href="index.php">Mājas</a></li>
             <li><a href="parmums.php">Par mums</a></li>
             <li><a href="kontakti.php">Kontakti</a></li>
         </ul>
