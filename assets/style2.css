@@ -773,3 +773,100 @@ footer{
     background: #ccc;
     cursor: not-allowed;
 }
+
+@media (max-width: 1200px) {
+    .content {
+        width: 90%;
+    }
+
+    .navtop div {
+        width: 100%;
+        margin: 0 20px;
+    }
+
+    .navtop div h1 {
+        font-size: 20px;
+    }
+
+    .footerContainer {
+        padding: 10px 20px;
+    }
+}
+
+@media (max-width: 900px) {
+    .menu-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .navtop div h1 {
+        font-size: 18px;
+    }
+
+    .content {
+        width: 100%;
+    }
+
+    .footerNav ul {
+        flex-direction: column;
+    }
+
+    .footerNav ul li {
+        text-align: center;
+        margin: 10px 0;
+    }
+
+    .socialIcons a {
+        padding: 8px;
+        margin: 4px;
+    }
+}
+
+@media (max-width: 700px) {
+    .footerNav ul {
+        flex-direction: column;
+    }
+
+    .footerNav ul li {
+        width: 100%;
+        text-align: center;
+        margin: 10px;
+    }
+
+    .socialIcons a {
+        padding: 8px;
+        margin: 4px;
+    }
+
+    .container3 {
+        width: 90%;
+    }
+
+    .content2 {
+        padding: 10px;
+    }
+}
+
+@media (max-width: 500px) {
+    .navtop div h1 {
+        font-size: 16px;
+    }
+
+    .footerNav ul {
+        flex-direction: column;
+    }
+
+    .footerNav ul li {
+        width: 100%;
+        text-align: center;
+        margin: 10px;
+    }
+
+    .socialIcons a {
+        padding: 6px;
+        margin: 2px;
+    }
+
+    .menu-item {
+        padding: 20px;
+    }
+}
