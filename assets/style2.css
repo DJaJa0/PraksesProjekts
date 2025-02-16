@@ -722,7 +722,7 @@ footer{
 
 .title {
     font-size: 2rem;
-    color: #004d99;
+    color: #0056b3;
     margin-bottom: 10px;
 }
 
@@ -762,11 +762,11 @@ footer{
 }
 
 .active {
-    background: #004d99;
+    background: #007BFF;
 }
 
 .active:hover {
-    background: #003366;
+    background: #0056b3;
 }
 
 .disabled {
