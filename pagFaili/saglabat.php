@@ -1,39 +1,38 @@
 <?php
 header('Content-Type: application/json');
-ini_set('display_errors', 1); // Parāda kļūdas
-ini_set('log_errors', 1); // Aktivizē kļūdu žurnālu
-error_log('/path_to_error_log'); // Norādiet pareizu ceļu uz kļūdu žurnālu
+ini_set('display_errors', 1); 
+ini_set('log_errors', 1); 
+error_log('/path_to_error_log'); 
 
-// Savienojuma dati
+
 $servername = "sql7.freesqldatabase.com";
 $username = "sql7761322";
 $password = "taU4zHrvby";
 $dbname = "sql7761322";
 
-// Savienojuma izveide
+
 $conn = new mysqli($servername, $username, $password, $dbname);
 
-// Pārbauda savienojumu
-if ($conn->connect_error) {
-    error_log("Savienojuma kļūda: " . $conn->connect_error); // Saglabā kļūdu žurnālā
+
+if ($conn->connect_error){
+    error_log("Savienojuma kļūda: " . $conn->connect_error); 
     echo json_encode(["error" => "Savienojuma kļūda: " . $conn->connect_error]);
     exit;
 }
 
-// Saņem JSON un pārveido par PHP masīvu
-// Pieņemsim, ka tiek nosūtīts "tips" un atjaunināts ieraksts atbilstoši tam
+
 $input = json_decode(file_get_contents("php://input"), true);
 
-// Ja nav saņemti dati vai formāts nederīgs
-if (!$input) {
+
+if (!$input){
     error_log("Nepareizs JSON formāts vai dati nav saņemti!"); 
     echo json_encode(["error" => "Nepareizs JSON formāts vai dati nav saņemti!"]);
     exit;
 }
 
-// Pārbauda, vai ir nepieciešamie lauki
-if (!isset($input["nosaukums"], $input["numurs"], $input["kabinets"], $input["tips"])) {
-    error_log("Nepilnīgi dati!"); // Kļūdas reģistrēšana
+
+if (!isset($input["nosaukums"], $input["numurs"], $input["kabinets"], $input["tips"])){
+    error_log("Nepilnīgi dati!"); 
     echo json_encode(["error" => "Nepilnīgi dati!"]);
     exit;
 }
@@ -41,12 +40,12 @@ if (!isset($input["nosaukums"], $input["numurs"], $input["kabinets"], $input["ti
 $nosaukums = $conn->real_escape_string($input["nosaukums"]);
 $numurs = $conn->real_escape_string($input["numurs"]);
 $kabinets = $conn->real_escape_string($input["kabinets"]);
-$tipaVeids = $input["tips"];  // Ierīces tips
+$tipaVeids = $input["tips"];  
 
-// SQL pieprasījums atbilstoši izvēlētajai ierīces kategorijai
-if (!empty($input["id"])) {
+
+if (!empty($input["id"])){
     $id = intval($input["id"]);
-    switch ($tipaVeids) {
+    switch ($tipaVeids){
         case 'dators':
             $sql = "UPDATE inventarizacija_2024 SET Datora_nosaukums='$nosaukums', Datora_nr='$numurs', Kab='$kabinets' WHERE id=$id";
             break;
@@ -66,8 +65,8 @@ if (!empty($input["id"])) {
             $sql = "UPDATE inventarizacija_2024 SET Dok_kam_nosaukums='$nosaukums', Dok_kam_nr='$numurs', Kab='$kabinets' WHERE id=$id";
             break;
     }
-} else {
-    switch ($tipaVeids) {
+}else{
+    switch ($tipaVeids){
         case 'dators':
             $sql = "INSERT INTO inventarizacija_2024 (Datora_nosaukums, Datora_nr, Kab) VALUES ('$nosaukums', '$numurs', '$kabinets')";
             break;
@@ -89,9 +88,9 @@ if (!empty($input["id"])) {
     }
 }
 
-if ($conn->query($sql) === TRUE) {
+if ($conn->query($sql) === TRUE){
     echo json_encode(["message" => "Ieraksts veiksmīgi atjaunināts", "id" => $conn->insert_id]);
-} else {
+}else{
     error_log("Kļūda saglabājot: " . $conn->error); 
     echo json_encode(["error" => "Kļūda saglabājot: " . $conn->error]);
 }
