@@ -8,17 +8,17 @@ $dbname = "sql7761322";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
-if ($conn->connect_error) {
+if ($conn->connect_error){
     die(json_encode(["error" => "Savienojuma kļūda: " . $conn->connect_error]));
 }
 
 
-if (isset($_GET['tips'])) {
+if (isset($_GET['tips'])){
     $tips = strtolower($_GET['tips']); 
-    error_log("Saņemtais tips: " . $tips); // Debugging logs
+    error_log("Saņemtais tips: " . $tips); 
     $page = isset($_GET['page']) ? (int)$_GET['page'] : 1; 
     $limit = 5;
-    $offset = ($page - 1) * $limit; 
+    $offset = ($page-1) * $limit; 
 
    
     $lauki = [
@@ -30,7 +30,7 @@ if (isset($_GET['tips'])) {
         "dok" => ["Dok_kam_nosaukums", "Dok_kam_nr"]
     ];
 
-    if (isset($lauki[$tips])) {
+    if (isset($lauki[$tips])){
         $nosaukums = $lauki[$tips][0];
         $numurs = $lauki[$tips][1];
 
@@ -40,20 +40,20 @@ if (isset($_GET['tips'])) {
 
         $result = $conn->query($sql);
 
-        if ($result === false) {
+        if ($result === false){
             echo json_encode(["error" => "SQL kļūda: " . $conn->error]);
-        } else {
+        }else{
             $dati = [];
-            while ($row = $result->fetch_assoc()) {
+            while ($row = $result->fetch_assoc()){
                 $dati[] = $row;
             }
 
             echo json_encode($dati);
         }
-    } else {
+    }else{
         echo json_encode(["error" => "Nepareizs tips!"]);
     }
-} else {
+}else{
     echo json_encode(["error" => "Trūkst tips parametra!"]);
 }
 
