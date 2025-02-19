@@ -8,11 +8,11 @@ $DATABASE_NAME = 'sql7761322';
 
 $con = mysqli_connect($DATABASE_HOST, $DATABASE_USER, $DATABASE_PASS, $DATABASE_NAME);
 
-if (mysqli_connect_errno()) {
+if (mysqli_connect_errno()){
     exit('Neizdevās pievienoties MySQL: ' . mysqli_connect_error());
 }
 
-if (!isset($_POST['username'], $_POST['password'])) {
+if (!isset($_POST['username'], $_POST['password'])){
     $_SESSION['error_message'] = 'Aizpildi gan lietotājvārda, gan paroles laukus!';
     header('Location: Login.php');
     exit;
@@ -21,22 +21,22 @@ if (!isset($_POST['username'], $_POST['password'])) {
 $username = htmlspecialchars(trim($_POST['username']));
 $password = trim($_POST['password']);
 
-if (empty($username) || empty($password)) {
+if (empty($username) || empty($password)){
     $_SESSION['error_message'] = 'Aizpildi visus laukus!';
     header('Location: Login.php'); 
     exit;
 }
 
-if ($stmt = $con->prepare('SELECT id, password FROM accounts WHERE username = ?')) {
+if ($stmt = $con->prepare('SELECT id, password FROM accounts WHERE username = ?')){
     $stmt->bind_param('s', $username);
     $stmt->execute();
     $stmt->store_result();
 
-    if ($stmt->num_rows > 0) {
+    if ($stmt->num_rows > 0){
         $stmt->bind_result($id, $hashed_password);
         $stmt->fetch();
 
-        if (password_verify($password, $hashed_password)) {
+        if (password_verify($password, $hashed_password)){
             
             session_regenerate_id(true);
             $_SESSION['loggedin'] = true;
@@ -45,12 +45,12 @@ if ($stmt = $con->prepare('SELECT id, password FROM accounts WHERE username = ?'
 
             header('Location: ../index.php');
             exit;
-        } else {
+        }else{
             $_SESSION['error_message'] = 'Nepareizs lietotājvārds un/vai parole!';
             header('Location: Login.php');
             exit;
         }
-    } else {
+    }else{
         $_SESSION['error_message'] = 'Nepareizs lietotājvārds un/vai parole!';
         header('Location: Login.php');
         exit;
