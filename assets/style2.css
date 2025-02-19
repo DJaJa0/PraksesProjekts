@@ -327,7 +327,7 @@ footer{
 
 /*Atpakaļ poga no profile.php uz inventars.php*/
 
-.back-button {
+.back-button{
     display: inline-block;
     margin-top: 10px;
     padding: 10px 20px;
@@ -339,13 +339,13 @@ footer{
     transition: background 0.3s;
 }
 
-.back-button:hover {
+.back-button:hover{
     background-color: #0056b3;
 }
 /**/
 
 /*Ritiāšanas poga uz augšu*/
-#scrollTopBtn {
+#scrollTopBtn{
     display: none;
     position: fixed;
     bottom: 20px;
@@ -361,16 +361,16 @@ footer{
     transition: opacity 0.3s, transform 0.3s;
 }
 
-#scrollTopBtn i {
+#scrollTopBtn i{
     font-size: 24px;
 }
 
-#scrollTopBtn:hover {
+#scrollTopBtn:hover{
     background-color: #0056b3;
     transform: scale(1.1);
 }
 
-#scrollTopBtn.show {
+#scrollTopBtn.show{
     display: block;
 }
 
@@ -419,7 +419,7 @@ footer{
         background-color: #c9302c; 
     }
 
-.confirm-delete-button {
+.confirm-delete-button{
     display: block;
     margin: 10px auto; 
     padding: 8px 16px; 
@@ -438,7 +438,7 @@ footer{
     background-color: #9e241f;       
     }
 
-.close-form-button {
+.close-form-button{
     display: block;
     margin: 10px auto;
     padding: 8px 25px;
@@ -454,11 +454,11 @@ footer{
     text-align: center;
     }
     
-.close-form-button:hover {
+.close-form-button:hover{
     background-color: #0056b3;
     }
 
-.account-delete-h2 {
+.account-delete-h2{
     margin: 0 auto; 
     padding: 20px 0;
     padding-bottom: 10px;
@@ -521,32 +521,32 @@ footer{
 
 /*SlideShow*/
 
-.container2 {
+.container2{
     padding: 2rem;
 }
 
-.slider-wrapper {
+.slider-wrapper{
     position: relative;
     max-width: 48rem;
     margin: 0 auto;
-    overflow: hidden; /* Lai izvairītos no attēlu daļējas parādīšanās */
+    overflow: hidden; 
 }
 
-.slider {
+.slider{
     display: flex;
     width: 100%;
     transition: transform 0.5s ease-in-out;
     
 }
 
-.slider img {
-    width: 100%; /* Attēli aizņem 100% no vecāka */
+.slider img{
+    width: 100%; 
     flex-shrink: 0;
     object-fit: cover;
     border-radius: 0.5rem;
 }
 
-.slider-nav {
+.slider-nav{
     display: flex;
     column-gap: 1rem;
     position: absolute;
@@ -556,7 +556,7 @@ footer{
     z-index: 1;
 }
 
-.nav-dot {
+.nav-dot{
     width: 0.8rem;
     height: 0.8rem;
     border-radius: 50%;
@@ -566,12 +566,12 @@ footer{
     cursor: pointer;
 }
 
-.nav-dot:hover, .nav-dot.active {
+.nav-dot:hover, .nav-dot.active{
     opacity: 1;
 }
 
  /*Par mums*/
-.about-container {
+.about-container{
     max-width: 900px;
     margin: 40px auto;
     padding: 20px;
@@ -580,24 +580,24 @@ footer{
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.about-content {
+.about-content{
     text-align: center;
 }
 
-.about-content h2 {
+.about-content h2{
     font-size: 2rem;
     color: #004d99;
     margin-bottom: 15px;
 }
 
-.about-content p {
+.about-content p{
     font-size: 1.1rem;
     line-height: 1.6;
     color: #333;
 }
 
 .values-section,
-.achievements-section {
+.achievements-section{
     margin-top: 30px;
 }
 
@@ -617,12 +617,12 @@ footer{
     gap: 10px; 
 }
 
-.values-list {
+.values-list{
     list-style: none;
     padding: 0;
 }
 
-.values-list li {
+.values-list li{
     font-size: 1.1rem;
     display: flex;
     align-items: center;
@@ -634,18 +634,18 @@ footer{
     border-radius: 8px;
 }
 
-.values-list i {
+.values-list i{
     color: #004d99;
 }
 
-.achievements-section p {
+.achievements-section p{
     font-size: 1.1rem;
     color: #333;
     line-height: 1.6;
 }
 
 /*Kontakti*/
-.contacts-container {
+.contacts-container{
     max-width: 800px;
     margin: 40px auto;
     padding: 20px;
@@ -654,27 +654,27 @@ footer{
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.contacts-header {
+.contacts-header{
     text-align: center;
     margin-bottom: 20px;
 }
 
-.contacts-header h2 {
+.contacts-header h2{
     font-size: 2rem;
     color: #004d99;
     margin-bottom: 10px;
 }
 
-.contacts-header p {
+.contacts-header p{
     font-size: 1.2rem;
     color: #333;
 }
 
-.contact-info {
+.contact-info{
     margin-top: 20px;
 }
 
-.contact-info h3 {
+.contact-info h3{
     font-size: 1.5rem;
     color: #004d99;
     display: flex;
@@ -683,12 +683,12 @@ footer{
     margin-bottom: 10px;
 }
 
-.contact-list {
+.contact-list{
     list-style: none;
     padding: 0;
 }
 
-.contact-list li {
+.contact-list li{
     font-size: 1.1rem;
     padding: 10px;
     border-left: 4px solid #004d99;
@@ -697,13 +697,13 @@ footer{
     border-radius: 8px;
 }
 
-.contact-list a {
+.contact-list a{
     color: #004d99;
     text-decoration: none;
     font-weight: bold;
 }
 
-.contact-list a:hover {
+.contact-list a:hover{
     text-decoration: underline;
 }
 
@@ -711,7 +711,7 @@ footer{
 
 /*Sākums index.php*/
 
-.container3 {
+.container3{
     max-width: 600px;
     margin: 30px auto;
     padding: 20px;
@@ -720,19 +720,19 @@ footer{
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.title {
+.title{
     font-size: 2rem;
     color: #0056b3;
     margin-bottom: 10px;
 }
 
-.subtitle {
+.subtitle{
     font-size: 1.2rem;
     color: #555;
     margin-bottom: 20px;
 }
 
-.menu-grid {
+.menu-grid{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 15px;
@@ -741,7 +741,7 @@ footer{
 }
 
 
-.menu-item {
+.menu-item{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -757,116 +757,116 @@ footer{
     text-align: center;
 }
 
-.menu-item i {
+.menu-item i{
     font-size: 1.5rem;
 }
 
-.active {
+.active{
     background: #007BFF;
 }
 
-.active:hover {
+.active:hover{
     background: #0056b3;
 }
 
-.disabled {
+.disabled{
     background: #ccc;
     cursor: not-allowed;
 }
 
-@media (max-width: 1200px) {
-    .content {
+@media (max-width: 1200px){
+    .content{
         width: 90%;
     }
 
-    .navtop div {
+    .navtop div{
         width: 100%;
         margin: 0 20px;
     }
 
-    .navtop div h1 {
+    .navtop div h1{
         font-size: 20px;
     }
 
-    .footerContainer {
+    .footerContainer{
         padding: 10px 20px;
     }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 900px){
     .menu-grid {
         grid-template-columns: 1fr;
     }
 
-    .navtop div h1 {
+    .navtop div h1{
         font-size: 18px;
     }
 
-    .content {
+    .content{
         width: 100%;
     }
 
-    .footerNav ul {
+    .footerNav ul{
         flex-direction: column;
     }
 
-    .footerNav ul li {
+    .footerNav ul li{
         text-align: center;
         margin: 10px 0;
     }
 
-    .socialIcons a {
+    .socialIcons a{
         padding: 8px;
         margin: 4px;
     }
 }
 
-@media (max-width: 700px) {
+@media (max-width: 700px){
     .footerNav ul {
         flex-direction: column;
     }
 
-    .footerNav ul li {
+    .footerNav ul li{
         width: 100%;
         text-align: center;
         margin: 10px;
     }
 
-    .socialIcons a {
+    .socialIcons a{
         padding: 8px;
         margin: 4px;
     }
 
-    .container3 {
+    .container3{
         width: 90%;
     }
 
-    .content2 {
+    .content2{
         padding: 10px;
     }
 }
 
-@media (max-width: 500px) {
-    .navtop div h1 {
+@media (max-width: 500px){
+    .navtop div h1{
         font-size: 16px;
     }
 
-    .footerNav ul {
+    .footerNav ul{
         flex-direction: column;
     }
 
-    .footerNav ul li {
+    .footerNav ul li{
         width: 100%;
         text-align: center;
         margin: 10px;
     }
 
-    .socialIcons a {
+    .socialIcons a{
         padding: 6px;
         margin: 2px;
     }
 
-    .menu-item {
+    .menu-item{
         padding: 20px;
     }
 }
