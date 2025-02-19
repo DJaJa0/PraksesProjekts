@@ -11,6 +11,7 @@ session_start();
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
         <link rel="stylesheet" href="style.css">
         <script src="../assets/script.js" defer></script>
+		<link rel="icon" type="image/png" href="../assets/photos/icon.png">
 	</head>
 	<body>
 		<div class="login">
