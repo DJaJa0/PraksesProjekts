@@ -1,26 +1,26 @@
 // Izvairās no formu atkārtotas iesniegšanas
-if (window.history.replaceState) {
+if (window.history.replaceState){
     window.history.replaceState(null, null, window.location.href);
 }
 
 let dati = [];
 let pašreizējaisIndekss = null;
 
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function (){
     console.log("DOMContentLoaded: JavaScript ielādēts!");
     let inventarsSelect = document.getElementById("inventars");
-    if (inventarsSelect) {
+    if (inventarsSelect){
         inventarsSelect.addEventListener("change", ieladetDatus);
-    } else {
+    }else{
         console.error("Kļūda: 'inventars' ID netika atrasts!");
     }
 });
 
 let pašreizējāLapa = 1; 
 
-function ieladetDatus() {
+function ieladetDatus(){
     let selectElement = document.getElementById("inventars");
-    if (!selectElement) {
+    if (!selectElement){
         console.error("Kļūda: 'inventars' select elements nav atrasts!");
         return;
     }
@@ -38,7 +38,7 @@ function ieladetDatus() {
 
     console.log(`Izvēlēts inventārs: ${tips}`);
 
-    if (tips === "none") {
+    if (tips === "none"){
         document.getElementById("inventāraDetaļas").innerHTML = "Lūdzu, izvēlieties kategoriju.";
         return;
     }
@@ -47,7 +47,7 @@ function ieladetDatus() {
         .then(response => response.json())
         .then(datiNoServera => {
             console.log("Ielādētie dati:", datiNoServera);
-            if (datiNoServera.error) {
+            if (datiNoServera.error){
                 document.getElementById("inventāraDetaļas").innerHTML = datiNoServera.error;
                 return;
             }
@@ -60,27 +60,27 @@ function ieladetDatus() {
         });
 }
 
-function nākamāLapa() {
+function nākamāLapa(){
     pašreizējāLapa++;
     ieladetDatus();
 }
 
-function iepriekšējāLapa() {
-    if (pašreizējāLapa > 1) {
+function iepriekšējāLapa(){
+    if (pašreizējāLapa > 1){
         pašreizējāLapa--;
         ieladetDatus();
     }
 }
 
-function paraditDatus() {
+function paraditDatus(){
     console.log("Rāda datus tabulā...");
     const inventaraDetaļas = document.getElementById("inventāraDetaļas");
-    if (!inventaraDetaļas) {
+    if (!inventaraDetaļas){
         console.error("Kļūda: 'inventāraDetaļas' elements nav atrasts!");
         return;
     }
 
-    if (dati.length === 0) {
+    if (dati.length === 0){
         inventaraDetaļas.innerHTML = "Nav pievienotu datu.";
         return;
     }
@@ -113,16 +113,16 @@ function paraditDatus() {
     inventaraDetaļas.innerHTML = html;
 }
 
-function saglabatDatus() {
+function saglabatDatus(){
     let nosaukums = document.getElementById("nosaukums").value;
     let apraksts = document.getElementById("apraksts").value;
     let kabinets = document.getElementById("kabinets").value;
-    let ierakstaID = document.getElementById("ierakstaID").value; // Noslēptais ID lauks
-    let inventarsSelect = document.getElementById("inventars");  // Izvēlētais inventārs
+    let ierakstaID = document.getElementById("ierakstaID").value; 
+    let inventarsSelect = document.getElementById("inventars");  
     let tips = inventarsSelect ? inventarsSelect.value : null;
 
-    // Pārbauda, vai visi nepieciešamie lauki ir aizpildīti
-    if (!nosaukums || !apraksts || !kabinets || !tips) {
+   
+    if (!nosaukums || !apraksts || !kabinets || !tips){
         alert("Lūdzu, aizpildiet visus laukus un izvēlieties ierīces kategoriju.");
         return;
     }
@@ -131,38 +131,38 @@ function saglabatDatus() {
         nosaukums: nosaukums,
         numurs: apraksts,
         kabinets: kabinets,
-        tips: tips  // Nosūtām arī ierīces tipu
+        tips: tips  
     };
 
-    // Ja ir ieraksta ID, pievienojam to dati objektam
-    if (ierakstaID) {
-        dati.id = ierakstaID; // pievienojam ID, lai labotu ierakstu
+    
+    if (ierakstaID){
+        dati.id = ierakstaID; 
     }
 
-    console.log("Nosūtāmie dati:", dati); // Debugging
+    console.log("Nosūtāmie dati:", dati); 
 
     fetch('/PraksesProjekts/pagFaili/saglabat.php', {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(dati)
     })
-    .then(response => response.text()) // Pārveidojam atbildi uz tekstu
+    .then(response => response.text()) 
     .then(responseText => {
         let data;
         try {
-            data = JSON.parse(responseText); // Mēģinām pārvērst atbildi par JSON
-        } catch (e) {
+            data = JSON.parse(responseText);
+        } catch (e){
             console.error("Kļūda atbildē, nepareizs JSON formāts:", responseText);
             alert("Nezināma kļūda servera atbildē. Mēģiniet vēlreiz.");
             return;
         }
 
         console.log("Atbilde no servera:", data);
-        if (data.message) {
+        if (data.message){
             alert(data.message);
             aizvertFormu();
-            ieladetDatus(); // Pārlādē datus
-        } else {
+            ieladetDatus(); 
+        }else{
             alert("Kļūda: " + (data.error || "Nezināma kļūda!"));
         }
     })
@@ -173,17 +173,17 @@ function saglabatDatus() {
 }
 
 
-function labot(index) {
+function labot(index){
     pašreizējaisIndekss = index;
     const ieraksts = dati[index];
     document.getElementById("nosaukums").value = ieraksts.nosaukums;
     document.getElementById("apraksts").value = ieraksts.numurs;
     document.getElementById("kabinets").value = ieraksts.kabinets;
-    document.getElementById("ierakstaID").value = ieraksts.id; // Ievieto ID noslēptajā laukā
+    document.getElementById("ierakstaID").value = ieraksts.id; 
     document.getElementById("labotFormu").style.display = "block";
 }
 
-function pievienotJaunu() {
+function pievienotJaunu(){
     document.getElementById("nosaukums").value = "";
     document.getElementById("apraksts").value = "";
     document.getElementById("kabinets").value = "";
@@ -191,33 +191,33 @@ function pievienotJaunu() {
     document.getElementById("labotFormu").style.display = "block";
 }
 
-function aizvertFormu() {
+function aizvertFormu(){
     document.getElementById("labotFormu").style.display = "none";
 }
 
 // Ritināšanas poga uz augšu
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function(){
     let scrollTopBtn = document.getElementById("scrollTopBtn");
 
     window.onscroll = function() {
-        if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100){
             scrollTopBtn.classList.add("show");
-        } else {
+        }else{
             scrollTopBtn.classList.remove("show");
         }
     };
 
-    window.scrollToTop = function() {
+    window.scrollToTop = function(){
         window.scrollTo({ top: 0, behavior: 'smooth' });
     };
 });
 
 // Konta dzēšana
-function showDeleteForm() {
+function showDeleteForm(){
     document.getElementById("delete-form").style.display = "block";
 }
 
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function (){
     setTimeout(function () {
         let errorMsg = document.getElementById("error-message");
         if (errorMsg) {
@@ -227,7 +227,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }, 5000);
 });
 
-function hideDeleteForm() {
+function hideDeleteForm(){
     document.getElementById("delete-form").style.display = "none";
 }
 
@@ -236,12 +236,12 @@ function hidePasswordForm(){
     document.getElementById("password-form").style.display = "none"; 
 }
 
-function hidePassword() {
+function hidePassword(){
     location.reload(); 
 }
 
 // Paroles parādīšana Login.php
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function (){
     const passwordInput = document.getElementById("password");
     const togglePassword = document.getElementById("togglePassword");
 
@@ -249,7 +249,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if(passwordInput.type === "password"){
             passwordInput.type = "text";
             togglePassword.innerHTML = '<i class="fas fa-eye-slash"></i>';
-        } else {
+        }else{
             passwordInput.type = "password";
             togglePassword.innerHTML = '<i class="fas fa-eye"></i>'; 
         }
@@ -265,15 +265,15 @@ const totalSlides = dots.length;
 
 function changeSlide(index) {
     currentIndex = index;
-    const offset = -index * 100; // Pārvieto par 100% platumu
+    const offset = -index * 100; 
     slider.style.transform = `translateX(${offset}%)`;
 
-    // Aktīvais punkts
+   
     dots.forEach(dot => dot.classList.remove("active"));
     dots[index].classList.add("active");
 }
 
-// Sākumā atzīmē pirmo punktu kā aktīvu
+
 dots[currentIndex].classList.add("active");
 
 
