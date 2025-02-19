@@ -106,33 +106,33 @@ h1{
     background-color: #007784;
 }
 
-@media (max-width: 768px) {
-    body {
+@media (max-width: 768px){
+    body{
         padding: 10px;
     }
 
-    form, #saturs, #labotFormu {
+    form, #saturs, #labotFormu{
         width: 90%;
         padding: 15px;
     }
 
-    .login-box {
+    .login-box{
         width: 90%;
         padding: 15px;
     }
 }
 
-@media (max-width: 480px) {
-    h1 {
+@media (max-width: 480px){
+    h1{
         font-size: 20px;
     }
 
-    button {
+    button{
         font-size: 14px;
         padding: 10px;
     }
 
-    .input-field {
+    .input-field{
         font-size: 14px;
         padding: 8px;
     }
