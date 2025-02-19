@@ -26,7 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST"){
     $stmt->bind_result($hashed_password);
     $stmt->fetch();
 
-    if (password_verify($password, $hashed_password)) {
+    if (password_verify($password, $hashed_password)){
         
         $stmt = $con->prepare('DELETE FROM accounts WHERE id = ?');
         $stmt->bind_param('i', $_SESSION['id']);
