@@ -1,11 +1,11 @@
 <?php
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+if ($_SERVER['REQUEST_METHOD'] === 'POST'){
     $nosaukums = trim($_POST['nosaukums'] ?? '');
     $apraksts = trim($_POST['apraksts'] ?? '');
     $kabinets = trim($_POST['kabinets'] ?? '');
 
     // Pārbauda, vai lauki ir aizpildīti
-    if (empty($nosaukums) || empty($apraksts) || empty($kabinets)) {
+    if (empty($nosaukums) || empty($apraksts) || empty($kabinets)){
         echo "Visi lauki ir jāaizpilda!";
         exit;
     }
@@ -14,9 +14,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $data = "{$nosaukums},{$apraksts},{$kabinets}\n";
     $result = file_put_contents('data.csv', $data, FILE_APPEND);
 
-    if ($result) {
+    if ($result){
         echo "Dati veiksmīgi saglabāti!";
-    } else {
+    }else{
         echo "Kļūda datu saglabāšanā!";
     }
 }
