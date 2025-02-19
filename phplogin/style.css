@@ -3,14 +3,14 @@
   	font-family: -apple-system, BlinkMacSystemFont, "segoe ui", roboto, oxygen, ubuntu, cantarell, "fira sans", "droid sans", "helvetica neue", Arial, sans-serif;
   	font-size: 16px;
 }
-body {
+body{
   	background-color: #435165;
     background: url('../assets/photos/skolasbilde.jpg') no-repeat center center fixed;
   	background-size: cover;
     position: relative;
 }
 
-body::after {
+body::after{
     content: '';
     position: fixed;
     top: 0;
@@ -23,7 +23,7 @@ body::after {
     z-index: 1; 
 }
 
-.login {
+.login{
     position: relative;
     z-index: 2;
   	width: 400px;
@@ -32,7 +32,7 @@ body::after {
   	margin: 100px auto;
 }
 
-.login h1 {
+.login h1{
   	text-align: center;
   	color: #5b6574;
   	font-size: 26px;
@@ -40,7 +40,7 @@ body::after {
   	
 }
 
-.login h2 {
+.login h2{
     text-align: center;
     color: #5b6574;
     font-size: 24px;
@@ -48,13 +48,13 @@ body::after {
     border-bottom: 1px solid #dee0e4;
 }
 
-.login form {
+.login form{
   	display: flex;
   	flex-wrap: wrap;
   	justify-content: center;
   	padding-top: 20px;
 }
-.login form label {
+.login form label{
   	display: flex;
   	justify-content: center;
   	align-items: center;
@@ -74,7 +74,7 @@ body::after {
     padding: 0 15px;
 }
 
-.login form input[type="submit"] {
+.login form input[type="submit"]{
   	width: 100%;
   	padding: 15px;
  	margin-top: 20px;
@@ -86,12 +86,12 @@ body::after {
   	transition: background-color 0.2s;
 }
 
-.login form input[type="submit"]:hover {
+.login form input[type="submit"]:hover{
 	background-color: #2868c7;
   	transition: background-color 0.2s;
 }
 
-.register-button {
+.register-button{
     display: inline-block;
     width: 100%;
     padding: 15px;
@@ -106,25 +106,25 @@ body::after {
      
 }
 
-.register-button:hover {
+.register-button:hover{
     background-color: #dbdada;
 	transition: background-color 0.2s;
 	color: #3274d6; 
 }
 
-.message.success {
+.message.success{
     color: #006809;
     font-weight: bold;
     text-align: center;
 }
 
-.message.error {
+.message.error{
     color: #fc2b2b;
     font-weight: bold;
     text-align: center;
 }
 
-.error-message {
+.error-message{
     color: #fc2b2b;
     font-size: 16px;
     text-align: center;
@@ -132,18 +132,18 @@ body::after {
     font-weight: bold;
 }
 
-.password-container {
+.password-container{
     position: relative;
     display: flex;
     align-items: center;
 }
 
-.password-container input {
+.password-container input{
     width: 100%;
     padding-right: 35px; 
 }
 
-.password-toggle {
+.password-toggle{
     position: absolute;
     right: 10px;
     transform: translateY(-40%);
@@ -152,34 +152,34 @@ body::after {
     user-select: none;
 }
 
-@media (max-width: 768px) {
-    body {
+@media (max-width: 768px){
+    body{
         padding: 10px;
     }
 
-    .login {
+    .login{
         width: 90%;
         padding: 15px;
     }
 
     .login form input[type="text"],
     .login form input[type="email"],
-    .login form input[type="password"] {
+    .login form input[type="password"]{
         width: 100%;
     }
 
-    .password-container {
+    .password-container{
         width: 100%;
     }
 }
 
-@media (max-width: 480px) {
-    .login {
+@media (max-width: 480px){
+    .login{
         width: 95%;
         padding: 10px;
     }
 
-    .login h1, .login h2 {
+    .login h1, .login h2{
         font-size: 22px;
     }
 
